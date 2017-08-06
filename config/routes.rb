@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'reserve_items/create'
+
+  get 'reserve_items/update'
+
+  get 'reserve_items/destroy'
+
   get 'carts/show'
 
   get 'elements/index'
