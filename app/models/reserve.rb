@@ -5,7 +5,7 @@ class Reserve < ApplicationRecord
 
   # Set Reservation Status
   def set_reserve_status
-    self.reserve_status_id = 1 
+    self.reserve_status_id = 1
   end
 
 
