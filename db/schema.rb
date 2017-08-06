@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170806165504) do
+ActiveRecord::Schema.define(version: 20170806170902) do
 
   create_table "elements", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,28 @@ ActiveRecord::Schema.define(version: 20170806165504) do
     t.boolean "available"
     t.integer "amount"
     t.string "school"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reserve_items", force: :cascade do |t|
+    t.integer "element_id"
+    t.integer "order_id"
+    t.integer "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["element_id"], name: "index_reserve_items_on_element_id"
+    t.index ["order_id"], name: "index_reserve_items_on_order_id"
+  end
+
+  create_table "reserve_statuses", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reserves", force: :cascade do |t|
+    t.integer "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
