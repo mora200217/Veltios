@@ -2,4 +2,5 @@
 alert("not valid.")
 <% else %>
 alert("<%= @reserve_item.id %>")
+ $(".cart-text").html("<%= escape_javascript(render 'layouts/cart_text') %>")
 <% end %>
