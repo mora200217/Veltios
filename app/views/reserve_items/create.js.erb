@@ -1,0 +1,5 @@
+<% if @reserve.errors.any? || @reserve_item.errors.any? %>
+alert("not valid.")
+<% else %>
+alert("<%= @reserve_item.id %>")
+<% end %>
