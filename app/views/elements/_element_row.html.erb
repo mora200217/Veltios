@@ -9,7 +9,7 @@
       <%= form_for reserve_item, remote: true do |f| %>
       <h4 class="text-right">Amount: <span style="color: green"> <%= element.amount%></span></h4>
         <div class="input-group">
-          <%= f.number_field :amount, value: 1, class: "form-control", min: 1, element.amount %>
+          <%= f.number_field :amount, value: 1, class: "form-control", min: 1, max: element.amount %>
           <div class="input-group-btn">
             <%= f.hidden_field :element_id, value: element.id %>
             <%= f.submit "Reserve", class: "btn btn-primary" %>
