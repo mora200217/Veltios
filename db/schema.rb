@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 20170806170902) do
 
   create_table "reserve_items", force: :cascade do |t|
     t.integer "element_id"
-    t.integer "order_id"
+    t.integer "reserve_id"
     t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["element_id"], name: "index_reserve_items_on_element_id"
-    t.index ["order_id"], name: "index_reserve_items_on_order_id"
+    t.index ["reserve_id"], name: "index_reserve_items_on_reserve_id"
   end
 
   create_table "reserve_statuses", force: :cascade do |t|
