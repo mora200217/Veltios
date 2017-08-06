@@ -12,7 +12,7 @@
     There are no elements to reserve.  Please <%= link_to "go back", root_path %> and add some elements dude!
   </p>
 <% else %>
-  <% @reserve_items.each do |order_item| %>
+  <% @reserve_items.each do |element_item| %>
     <%= render 'carts/cart_row', element: element_item.element, element_item: element_item, show_total: true %>
   <% end %>
 <% end %>
