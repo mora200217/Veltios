@@ -5,5 +5,6 @@ class Element < ApplicationRecord
   # Main Initaial Associations
   has_many :reserve_items
 
+  # Define Initial Scope 
   default scope {where(active: true)}
 end
