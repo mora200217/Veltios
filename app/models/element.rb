@@ -6,5 +6,5 @@ class Element < ApplicationRecord
   has_many :reserve_items
 
   # Define Initial Scope
-  default_scope {where(active: true)}
+  default_scope {where(available: true)}
 end
