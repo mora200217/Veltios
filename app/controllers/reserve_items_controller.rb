@@ -1,10 +1,12 @@
 class ReserveItemsController < ApplicationController
   # Created Method
   def create
+    if @reserve.nil? || @reserve.reserve_item.find(params[:id]).nil?
     @reserve = current_reserve # Get current reserve group
     @reserve_item = @reserve.reserve_items.new(reserve_items_params) # Create a new item, based in private params function
     @reserve.save # Save insertion in current reservation
     session[:reserve_id] = @reserve.id # Create a session with reservation id
+  end
   end
 
   # Update Method
