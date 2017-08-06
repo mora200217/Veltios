@@ -1,7 +1,7 @@
 class ReserveItem < ApplicationRecord
   # Main Initial Associations
   belongs_to :element
-  belongs_to :order
+  belongs_to :reserve
 
   # Function Element Present
   def element_present
