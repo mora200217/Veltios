@@ -9,6 +9,7 @@
 
 Element.delete_all
 Element.create! id: 1, name: "O2 Sensor", desciption: "A simple sensor", brand: "Vernier", units: "g/m^2", uncertainty: 0.2, available: true, amount: 12, school: "Nueva York"
+Element.create! id: 2, name: "Force Sensor", desciption: "A simple sensor", brand: "Vernier", units: "g/m^2", uncertainty: 0.2, available: true, amount: 5, school: "Nueva York"
 
 ReserveStatus.delete_all
 ReserveStatus.create! id: 1, name: "In Progress"
