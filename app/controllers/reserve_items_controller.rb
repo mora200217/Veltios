@@ -6,9 +6,12 @@ class ReserveItemsController < ApplicationController
       # default_id = :default_id
 
       @reserve_item = @reserve.reserve_items.new(reserve_items_params) # Create a new item, based in private params function
+      @element = Element.find(@reserve_item[:element_id])
+      @element.update_attribute(:amount, @element.amount.to_i - @reserve_item[:amount].to_i)
 
       @reserve.save # Save insertion in current reservation
       session[:reserve_id] = @reserve.id # Create a session with reservation id
+
 
   end
 
