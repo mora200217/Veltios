@@ -1,6 +1,6 @@
 class Element < ApplicationRecord
   # Accesible attributes for Element Registers
-    # attr_accesible :amount, :available
+  # attr_accesible :amount, :available
 
   # Main Initaial Associations
   has_many :reserve_items

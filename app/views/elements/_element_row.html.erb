@@ -12,7 +12,7 @@
           <%= f.number_field :amount, value: 1, class: "form-control", min: 1, max: element.amount %>
           <div class="input-group-btn">
             <%= f.hidden_field :element_id, value: element.id %>
-            <%= f.submit "Reserve", class: "btn btn-primary" %>
+            <%= f.submit "Reserve", class: "btn btn-primary", controller: elements %>
           </div>
         </div>
       <% end %>
