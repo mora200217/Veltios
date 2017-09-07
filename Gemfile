@@ -37,6 +37,7 @@ gem 'rails_admin', '~> 1.2'
 
 group :production do
   gem 'devise', '~> 4.3'
+  gem 'pg', '~> 0.21.0'
 end
 
 group :development, :test do
