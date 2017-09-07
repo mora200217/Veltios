@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_reserve  # Helper Method created
   before_action :authenticate_user!
+  
 
   # Current Reservation function
   def current_reserve
