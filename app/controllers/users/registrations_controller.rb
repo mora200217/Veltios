@@ -4,15 +4,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     super
+
     ReportMailer.register_mail.deliver
   end
 
 
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    super
+
+
+  end
 
   # POST /resource
   # def create

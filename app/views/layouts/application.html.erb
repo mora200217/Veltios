@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +16,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if !current_user.nil?%>
   <div class="container">
+
     <div class="row">
       <div class="col-xs-6">
         <h1><%= link_to "Lab Elements", root_path %></h1>
@@ -28,8 +31,12 @@
       </div>
     </div>
     <hr>
+
     <%= yield %>
   </div>
+  <% else  %>
+    <%= yield %>
+    <% end %>
 
 </body>
 </html>
