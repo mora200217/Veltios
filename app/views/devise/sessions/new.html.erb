@@ -1,0 +1,45 @@
+<div class="main-reg-div">
+  <div class = "reg-div left-div">
+    <%= image_tag("main_logo@4x.png", :alt => "rss feed", :class => "img-rounded big-logo") %>
+  </div>
+  <div class = "reg-div right-div">
+    <div class = "reg-form-div">
+      <h2 class = "reg-title title">COME ONE, JUST LOG IN</h2>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "reg-form"}) do |f| %>
+      <div class="reg-field-div">
+        <!-- <%= f.label :email %><br /> -->
+        <%= f.email_field :email, autofocus: true, class:  "reg-field", placeholder: "email" %>
+      </div>
+
+      <div class="reg-field-div">
+        <!-- <%= f.label :password %><br /> -->
+        <%= f.password_field :password, autocomplete: "off", class: "reg-field", placeholder: "password" %>
+      </div>
+
+      <div class = "row">
+        <% if devise_mapping.rememberable? -%>
+        <div class="field check-box-reg col-md-7">
+          <label class="switch ">
+              <%= f.label :remember_me, class: "label-reg-cb "%>
+            <%= f.check_box :remember_me %>
+            <span class="slider round btn-warning"></span>
+          </label>
+        </div>
+
+
+
+
+      <% end -%>
+
+      <div class=" col-md-2">
+        <%= f.submit "Log in", class: "btn btn-danger btn-reg" %>
+      </div>
+  </div>
+      <% end %>
+<br>
+<br>
+      <%= render "devise/shared/links" %>
+
+  </div>
+</div>

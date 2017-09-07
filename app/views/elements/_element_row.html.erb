@@ -1,0 +1,22 @@
+<div class="well">
+
+  <div class="row">
+    <div class="col-xs-8">
+      <h4><%= element.name %></small></h4>
+    </div>
+    <div class="col-xs-4">
+
+      <%= form_for reserve_item remote: true do |f| %>
+      <h4 class="text-right">Amount: <span style="color: green"> <%= element.amount%></span></h4>
+        <div class="input-group">
+          <%= f.number_field :amount, value: 1, class: "form-control", min: 1, max: element.amount %>
+          <div class="input-group-btn">
+            <%= f.hidden_field :element_id, value: element.id %>
+            <%= f.submit "Reserve", class: "btn btn-primary"%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>

@@ -1,14 +1,42 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Veltios</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title> Veltios App </title>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js' %>
+  <% if request.ssl? %>
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+    <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
+  <% else %>
+    <%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+    <%= javascript_include_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
+  <% end %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <% if !current_user.nil?%>
+  <div class="container">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <div class="row">
+      <div class="col-xs-6">
+        <h1><%= link_to "Lab Elements", root_path %></h1>
+      <% if !current_user.nil? && current_user.admin %>
+            <h7 ><%= link_to "Admin Panel", rails_admin_path%> </h7>
+      <% end %>
+      </div>
+      <div class="col-xs-6 text-right">
+        <h1 class="cart-text" ><%= render 'layouts/cart_text' %></h1>
+      </div>
+    </div>
+    <hr>
 
-  <body>
     <%= yield %>
-  </body>
+  </div>
+  <% else  %>
+    <%= yield %>
+    <% end %>
+
+</body>
 </html>
