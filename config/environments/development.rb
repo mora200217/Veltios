@@ -27,6 +27,20 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
+  config.action_mailer.delivery_method = :stmp
+  config.action_mailer.smtp_settings = {
+      :address => "stmp.gmail.com",
+      :port => 578,
+      :domain => "gmail.com",
+      :user_name => "veltiosapp",
+      :password => "VeltiosApp200217",
+      :authentication => "plain",
+      :enable_starttls_auto => true
+  }
+
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
