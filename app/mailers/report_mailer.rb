@@ -6,7 +6,11 @@ default from: 'veltiosapp@gmail.com'
   #   en.report_mailer.receipt.subject
   #
   def receipt
-    @greeting = "Hi"
-    mail(to: 'mora200217@hotmail.com', subject: 'Bienvenido a Veltios!')
+    mail(to: 'mora200217@hotmail.com', subject: 'Reserva Exitosa')
+  end
+
+
+  def register_mail
+  mail(to: 'mora200217@hotmail.com', subject: 'Bienvenido a Veltios!')
   end
 end

@@ -4,7 +4,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     super
-    ReportMailer.receipt.deliver
+    ReportMailer.register_mail.deliver
   end
 
 
