@@ -8,7 +8,7 @@ class ReserveItemsController < ApplicationController
       @reserve = current_reserve # Get current reserve grouo
       @reserve_item = @reserve.reserve_items.new(reserve_items_params) # Create a new item, based in private params function
       @reserve.save
-      
+
       session[:reserve_id] = @reserve.id # Create a session with reservation id
       @element = Element.find(@reserve_item[:element_id])
       @initial_element_amount = @element.amount.to_i # Declare initial amount value of the element
@@ -46,6 +46,13 @@ end
     @reserve_item.destroy # Destroy given item
     @reserve_items = @reserve.reserve_items # Save to current reservation items
 
+  end
+
+
+  # Send Mail method
+  def send_mail
+    ReportMailer.receipt.deliver
+    redirect_to root_path
   end
 
   # Privates Methods Initializer

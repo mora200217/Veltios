@@ -1,5 +1,5 @@
 <% if @reserve_items.size != 0%>
 <div class = "button-reserve -col-md-offset-5 ">
- <%= submit_tag "Send Reservations", class: "btn btn-primary" %>
+ <%= button_to "Send Reservations", class: "btn btn-primary", controller: :reserve_items, action: :send_mail %>
 </div>
 <% end%>
