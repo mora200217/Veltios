@@ -5,15 +5,25 @@ class ReserveItemsController < ApplicationController
 
   # Created Method
   def create
+
       @reserve = current_reserve # Get current reserve grouo
       @reserve_item = @reserve.reserve_items.new(reserve_items_params) # Create a new item, based in private params function
       @reserve.save
 
+    if !@reserves_done.include? @reserve_item[:element_id]
       session[:reserve_id] = @reserve.id # Create a session with reservation id
       @element = Element.find(@reserve_item[:element_id])
       @initial_element_amount = @element.amount.to_i # Declare initial amount value of the element
       @element.update_attribute(:amount, @initial_element_amount - @reserve_item[:amount].to_i)
+    else
+
+      @reserve.destroy
+    end
+
+    @reserves_done.push(@reserve_item[:element_id])
       redirect_to root_path
+
+
 
       # @reserve.save # Save insertion in current reservation
       # @current_elements = Element.all
@@ -51,8 +61,10 @@ end
 
   # Send Mail method
   def send_mail
-      @reserve_items = current_reserve.reserve_items
-    ReportMailer.receipt(@reserve_items).deliver
+    @reserve_items = current_reserve.reserve_items
+    @current_user = current_user
+    ReportMailer.receipt(@reserve_items, @current_user).deliver
+    @reserve_items.delete_all
     redirect_to root_path
   end
 

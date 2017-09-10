@@ -12,8 +12,11 @@
     There are no elements to reserve.  Please <%= link_to "go back", root_path %> and add some elements dude!
   </p>
 <% else %>
+<h3 class="page-header text-center cart-text-center ">Reservation Elements</h3>
   <% @reserve_items.each do |element_item| %>
     <%= render 'carts/cart_row', element: element_item.element, reserve_item: element_item, show_total: true %>
-    <%= render 'carts/btn_reserve'%>
+
   <% end %>
+<%= render 'carts/btn_reserve' %>
+
 <% end %>
