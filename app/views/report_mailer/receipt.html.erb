@@ -2,9 +2,10 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+
   </head>
   <body>
-    <t1>Bienvenido Andrés,</t1>
+    <t1>Bienvenido <%= @current_user.name.to_s %>,</t1>
     <p>
       Has reservado exitosamente los siguientes elementos<br>
 

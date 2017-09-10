@@ -10,7 +10,7 @@ RailsAdmin.config do |config|
 
 
 
-config.included_models = ["Element"]
+config.included_models = ["Element", "User"]
 
 
   ## == Cancan ==

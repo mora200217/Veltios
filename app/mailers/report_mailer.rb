@@ -11,7 +11,9 @@ default from: 'Veltios | Modern Lab App <veltiosapp@gmail.com>'
   end
 
 
-  def register_mail
+  def register_mail(current_user)
+  @current_user = current_user
+  # mail(to: @current_user.mail.to_s, subject: 'Bienvenido a Veltios!')
   mail(to: 'mora200217@hotmail.com', subject: 'Bienvenido a Veltios!')
   end
 end
