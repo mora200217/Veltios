@@ -285,7 +285,7 @@ position: relative;
   height: 1000px;
   width: 300px;
   position: fixed;
-
+  z-index: 2;
 
 }
 
