@@ -12,7 +12,7 @@
     <% @reserve_items.each do |current_element| %>
     <% @element = current_element.element%>
 
-    <li><span><%= @element.amount.to_s + " - " %></span><span><%= @element.name%></span></li>
+    <li><span><%= current_element.amount.to_s + " - " %></span><span><%= @element.name%></span></li>
 
     <% end %>
   <p>
