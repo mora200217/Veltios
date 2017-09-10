@@ -10,6 +10,8 @@ RailsAdmin.config do |config|
 
 
 
+config.included_models = ["Element"]
+
 
   ## == Cancan ==
   # config.authorize_with :cancan

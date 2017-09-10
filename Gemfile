@@ -30,6 +30,8 @@ gem 'rails_admin', '~> 1.2'
 
 gem 'paperclip', '~> 5.1'
 
+gem 'rails_admin_example_theme', :git => 'git://github.com/bbenezech/rails_admin_example_theme.git'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -42,6 +44,7 @@ gem 'paperclip', '~> 5.1'
 group :production do
   gem 'devise', '~> 4.3'
   gem 'pg', '~> 0.21.0'
+  gem 'paperclip', '~> 5.1'
 end
 
 group :development, :test do
