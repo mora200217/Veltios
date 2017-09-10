@@ -51,7 +51,8 @@ end
 
   # Send Mail method
   def send_mail
-    ReportMailer.receipt.deliver
+      @reserve_items = current_reserve.reserve_items
+    ReportMailer.receipt(@reserve_items).deliver
     redirect_to root_path
   end
 

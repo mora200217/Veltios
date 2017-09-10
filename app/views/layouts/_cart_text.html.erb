@@ -1,4 +1,4 @@
-<%= link_to "#{current_reserve.reserve_items.size} Elements to reserve" , cart_path, class: "btn btn-link" %>
+<%= link_to "#{current_reserve.reserve_items.size} Elements to reserve" , cart_path, class: "link", id: "cart-amount" %>
 <% if current_user%>
-<%= link_to "Logout", destroy_user_session_path, method: :delete%>
+<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "link", id: "logout-text"%>
 <% end %>

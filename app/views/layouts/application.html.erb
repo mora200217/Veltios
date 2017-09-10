@@ -17,23 +17,32 @@
 </head>
 <body>
   <% if !current_user.nil?%>
-  <div class="container">
+  <div class="top-nav">
 
-    <div class="row">
+    <div class="row top-nav">
       <div class="col-xs-6">
-        <h1><%= link_to "Veltios", root_path %></h1>
-      <% if !current_user.nil? && current_user.admin %>
-            <h7 ><%= link_to "Admin Panel", rails_admin_path%> </h7>
-      <% end %>
+        <h1>
+          <%= link_to "Veltios", root_path, class: "link", id: "main-title" %>
+          <% if !current_user.nil? && current_user.admin %>
+            <%= link_to "Admin Panel", rails_admin_path, class: "link", id: "admin-text"%>
+          <% end %>
+        </h1>
+
       </div>
       <div class="col-xs-6 text-right">
         <h1 class="cart-text" ><%= render 'layouts/cart_text' %></h1>
       </div>
     </div>
-    <hr>
+
+  </div>
+
+
+  <div class="sidebar">
+  <%= render 'layouts/sidebar'%>
+  </div>
 
     <%= yield %>
-  </div>
+
   <% else  %>
     <%= yield %>
     <% end %>
