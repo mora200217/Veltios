@@ -6,10 +6,16 @@
   <body>
     <h1>Bienvenido <%= @current_user.name %>,</h1>
     <p>
-      Te has registrado correctamente<br>
+      Te has registrado correctamente con la siguiente información
     </p>
-    <p>Gracias por usar Veltios App :)</p>
+
+    <ul>
+      <li> Nombre: <span style = "color:green"><%=@current_user.name %></span></li>
+      <li> Correo: <span style = "color:green"><%=@current_user.email %></span></li>
+      <li> Contraseña: <span style = "color:green"><%=@current_user.password %></span></li>
+    </ul>
+    <p>Gracias por usar Veltios App :)
     <br>
-    <p>Atentamente Andrés Morales </p>
+    Atentamente Andrés Morales </p>
   </body>
 </html>
