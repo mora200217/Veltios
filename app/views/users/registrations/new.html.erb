@@ -1,43 +1,41 @@
-<div class="main-reg-div">
-  <div class = "reg-div left-div">
-    <%= image_tag("main_logo@4x.png", :alt => "rss feed", :class => "img-rounded big-logo") %>
+<div class="container-fluid">
+  <div class="container">
+    <div class = "reg-div left-div">
+      <%= image_tag("main_logo@4x.png", :alt => "rss feed", :class => "img-rounded big-logo") %>
+    </div>
+    <div class = "reg-div right-div">
+      <div class = "reg-form-div">
+        <h2 class = "reg-title title">SIGN UP</h2>
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="reg-field-div">
+          <%= f.email_field :email, autofocus: true, class:  "reg-field", placeholder: "email" %>
+        </div>
+
+        <div class="reg-field-div">
+          <%= f.text_field :name, class:  "reg-field", placeholder: "name" %>
+        </div>
+
+        <div class="reg-field-div">
+          <%= f.password_field :password, autocomplete: "off", class:  "reg-field", placeholder: "password (" + @minimum_password_length.to_s  + " characters minimum)" %>
+        </div>
+
+        <div class="reg-field-div">
+          <%= f.password_field :password_confirmation, autocomplete: "off", class:  "reg-field", placeholder: "confirm password" %>
+        </div>
+
+        <div class="buttons-register-new">
+          <%= render "devise/shared/links" %>
+          <%= f.submit "Sign Up", class: "btn btn-danger signup-link" %>
+
+        </div>
+        <% end %>
+
+
+      </div>
+    </div>
   </div>
-  <div class = "reg-div right-div">
-    <div class = "reg-form-div">
-<h2 class = "reg-title title">SIGN UP</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="reg-field-div">
-    <!-- <%= f.label :email %><br /> -->
-    <%= f.email_field :email, autofocus: true, class:  "reg-field", placeholder: "email" %>
-  </div>
-
-  <div class="reg-field-div">
-    <!-- <%= f.label :name %><br /> -->
-    <%= f.text_field :name, class:  "reg-field", placeholder: "name" %>
-  </div>
-
-  <div class="reg-field-div">
-    <!-- <%= f.label :password %> -->
-
-    <%= f.password_field :password, autocomplete: "off", class:  "reg-field", placeholder: "password (" + @minimum_password_length.to_s  + " characters minimum)" %>
-  </div>
-
-  <div class="reg-field-div">
-    <!-- <%= f.label :password_confirmation %><br /> -->
-    <%= f.password_field :password_confirmation, autocomplete: "off", class:  "reg-field", placeholder: "confirm password" %>
-  </div>
-
-  <div class="buttons-register-new">
-    <%= render "devise/shared/links" %>
-    <%= f.submit "Sign Up", class: "btn btn-danger signup-link" %>
-
-  </div>
-<% end %>
-
-
-</div>
-</div>
 </div>
