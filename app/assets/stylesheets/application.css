@@ -14,7 +14,7 @@
  *= require_self
  */
 
-@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Timmana');
 
  *{
    padding: 0px;
@@ -29,6 +29,10 @@
     margin:auto;
 }
 
+li{
+  text-decoration: none;
+  list-style-type: none;
+}
 
 /* SESSIONS */
 
@@ -175,4 +179,38 @@ input:checked + .slider:before {
 
 .devise-links{
   text-align: center;
+}
+
+/* Nav Bar */
+
+.nav-bar-text, .nav-bar-text:hover{
+ color: #FAFAFA;
+ text-decoration: none;
+ font-size: 32px;
+ padding: 0px;
+ margin: 0px;
+ height: auto;
+ padding: 10px;
+ margin-bottom: -1%;
+ font-family: 'Timmana', sans-serif;
+ left: 0px;
+ text-align: left;
+}
+
+.nav-bar-text-cart, .nav-bar-text-cart:hover{
+ color: #FAFAFA;
+ text-decoration: none;
+ font-size: 20px;
+ font-weight: lighter;
+ padding: 0px;
+ margin: 0px;
+ height: auto;
+ padding: 10px;
+ left: 0px;
+ text-align: left;
+}
+
+.nav-bar-brand{
+  right: 0px;
+  position: absolute;
 }
