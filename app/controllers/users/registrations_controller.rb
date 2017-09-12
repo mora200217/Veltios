@@ -4,8 +4,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     super
-    @current_user = current_user
-    ReportMailer.register_mail(@current_user).deliver
+    if !current_user.nil?
+      @current_user = current_user
+      ReportMailer.register_mail(@current_user).deliver
+    end
   end
 
 
