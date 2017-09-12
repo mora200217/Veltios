@@ -29,6 +29,7 @@ gem 'devise', '~> 4.3'
 gem 'rails_admin', '~> 1.2'
 
 gem 'paperclip', '~> 5.1'
+gem 'aws-sdk', '~> 2.3'
 
 # gem 'rails_admin_example_theme', :git => 'git://github.com/bbenezech/rails_admin_example_theme.git'
 
