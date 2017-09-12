@@ -14,7 +14,7 @@
  *= require_self
  */
 
-@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Timmana');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Ramabhadra|Timmana');
 
  *{
    padding: 0px;
@@ -213,4 +213,36 @@ input:checked + .slider:before {
 .nav-bar-brand{
   right: 0px;
   position: absolute;
+}
+
+.nav-bar-container{
+  position: fixed;
+  display: table;
+}
+
+
+
+/* Side Bar */
+.side-bar-container{
+  position: fixed;
+  left: 0px;
+  height: 100%;
+  width: auto;
+  background: #2c3e50;
+}
+
+
+.side-bar-text{
+  width: 100%;
+  margin: 0px;
+  color: #ced9e4;
+  font-family: 'Ramabhadra', sans-serif;
+}
+
+.side-bar-text:hover{
+  text-decoration: none;
+  color: #ced9e4;
+font-weight: light;
+
+  font-family: 'Ramabhadra', sans-serif;
 }

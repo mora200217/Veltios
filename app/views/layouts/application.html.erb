@@ -5,10 +5,10 @@
   <title> Veltios App </title>
   <%= favicon_link_tag 'favicon.ico'%>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js' %>
+  <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js' %>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -16,25 +16,39 @@
 <body>
   <% if !current_user.nil?%>
 
-<nav class = "navbar fixed-top bg-dark navbar-light">
 
-      <a href="" class="navbar-brand nav-bar-brand">
-          <%= link_to "Veltios", root_path, class: "nav-bar-text" %>
-          <% if !current_user.nil? && current_user.admin %>
+
+
+        <nav class = "navbar  bg-dark navbar-light navbar-fixed-top">
+          <a href="" class="navbar-brand nav-bar-brand">
+            <%= link_to "Veltios", root_path, class: "nav-bar-text" %>
+            <% if !current_user.nil? && current_user.admin %>
             <%= link_to "Admin Panel", rails_admin_path, class: "nav-bar-text"%>
-          <% end %>
-</a>
+            <% end %>
+          </a>
+          <li>
+            <a href="" class = "nav-item cart-text">
+              <%= render 'layouts/cart_text'%>
+            </a>
+          </li>
+        </nav>
 
 
-<li>
-<a href="" class = "nav-item cart-text">
-<%= render 'layouts/cart_text'%>
-</a>
-</li>
+      <div class = "container side-bar-container">
 
-</nav>
+          <nav class="nav flex-column">
+            <a href="" class="nav-link side-bar-text">Sensors</a>
+            <a href="" class="nav-link side-bar-text">Tools</a>
+            <a href="" class="nav-link side-bar-text">Kits and Sets</a>
+            <a href="" class="nav-link side-bar-text">Compounds</a>
+            <a href="" class="nav-link side-bar-text">Elements</a>
+          </nav>
 
-    <%= yield %>
+      </div>
+
+
+
+  <%= yield %>
 
   <% else  %>
 
