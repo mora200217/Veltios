@@ -1,4 +1,40 @@
-<div class="main-container-div">
-  a
-</div>
-</div>
+
+<div class="row main-container-div">
+  <div class = "col devise-container left-container">
+    <%= image_tag("main_logo@4x.png", :alt => "rss feed", :class => "img-rounded main-img") %>
+  </div>
+  <div class = "col devise-container right-container">
+    <div class = "container form devise-form">
+      <h2 class = "devise-title">COME ONE, JUST LOG IN</h2>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => ""}) do |f| %>
+      <div class="form-group">
+        <%= f.email_field :email, autofocus: true, class:  "form-control", placeholder: "email" %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "password" %>
+      </div>
+      <div class = "row">
+        <% if devise_mapping.rememberable? -%>
+        <div class="field check-box-reg col-8">
+          <div class="row">
+            <%= f.label :remember_me, class: "devise-toogle-text col"%>
+            <div class = "col">
+              <label class="switch">
+                <%= f.check_box :remember_me %>
+                <span class="slider round btn-warning"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <% end -%>
+
+        <div class=" col-4">
+          <%= f.submit "Log in", class: "btn btn-danger devise-btn" %>
+        </div>
+      </div>
+      <% end %>
+      <div class = "container devise-links">
+      <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
