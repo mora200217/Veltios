@@ -1,32 +1,32 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
 
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One|Ramabhadra|Timmana');
 
- *{
-   padding: 0px;
-   margin: 0px;
- }
- img {
-   position: absolute;
-    top:0;
-    bottom:0;
-    left: 0px;
-    right: 0px;
-    margin:auto;
+*{
+  padding: 0px;
+  margin: 0px;
+}
+img {
+  position: absolute;
+  top:0;
+  bottom:0;
+  left: 0px;
+  right: 0px;
+  margin:auto;
 }
 
 li{
@@ -86,8 +86,8 @@ li{
 }
 
 .devise-btn{
-width: 100%;
-margin: 0px;
+  width: 100%;
+  margin: 0px;
 
 }
 
@@ -184,30 +184,30 @@ input:checked + .slider:before {
 /* Nav Bar */
 
 .nav-bar-text, .nav-bar-text:hover{
- color: #FAFAFA;
- text-decoration: none;
- font-size: 32px;
- padding: 0px;
- margin: 0px;
- height: auto;
- padding: 10px;
- margin-bottom: -1%;
- font-family: 'Timmana', sans-serif;
- left: 0px;
- text-align: left;
+  color: #FAFAFA;
+  text-decoration: none;
+  font-size: 32px;
+  padding: 0px;
+  margin: 0px;
+  height: auto;
+  padding: 10px;
+  margin-bottom: -1%;
+  font-family: 'Timmana', sans-serif;
+  left: 0px;
+  text-align: left;
 }
 
 .nav-bar-text-cart, .nav-bar-text-cart:hover{
- color: #FAFAFA;
- text-decoration: none;
- font-size: 20px;
- font-weight: lighter;
- padding: 0px;
- margin: 0px;
- height: auto;
- padding: 10px;
- left: 0px;
- text-align: left;
+  color: #FAFAFA;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: lighter;
+  padding: 0px;
+  margin: 0px;
+  height: auto;
+  padding: 10px;
+  left: 0px;
+  text-align: left;
 }
 
 .nav-bar-brand{
@@ -216,25 +216,32 @@ input:checked + .slider:before {
 }
 
 .nav-bar-container{
-  position: fixed;
-  display: table;
+
 }
 
 
 
 /* Side Bar */
 .side-bar-container{
-  position: fixed;
-  left: 0px;
-  height: 100%;
-  width: auto;
+
+position: fixed;
+height: 100%;
+width: 12%;
   background: #2c3e50;
 }
 
+.side-bar-aside-container{
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 20%;
+}
 
 .side-bar-text{
   width: 100%;
   margin: 0px;
+  left: 0px;
   color: #ced9e4;
   font-family: 'Ramabhadra', sans-serif;
 }
@@ -242,7 +249,31 @@ input:checked + .slider:before {
 .side-bar-text:hover{
   text-decoration: none;
   color: #ced9e4;
-font-weight: light;
-
+  font-weight: light;
   font-family: 'Ramabhadra', sans-serif;
 }
+
+
+/* Elements */
+.elements-list-container{
+  position: fixed;
+  height: 100%;
+  width: 88%;
+  right: 0px;
+}
+
+
+/* Main Content */
+
+.main-content-container{
+  display: table;
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+ /* Main Container */
+ .main-container{
+   display: table;
+ }

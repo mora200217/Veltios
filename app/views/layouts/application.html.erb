@@ -19,46 +19,58 @@
 
 
 
-        <nav class = "navbar  bg-dark navbar-light navbar-fixed-top">
-          <a href="" class="navbar-brand nav-bar-brand">
-            <%= link_to "Veltios", root_path, class: "nav-bar-text" %>
-            <% if !current_user.nil? && current_user.admin %>
-            <%= link_to "Admin Panel", rails_admin_path, class: "nav-bar-text"%>
-            <% end %>
-          </a>
-          <li>
-            <a href="" class = "nav-item cart-text">
-              <%= render 'layouts/cart_text'%>
-            </a>
-          </li>
-        </nav>
 
 
-      <div class = "container side-bar-container">
+<header>
 
-          <nav class="nav flex-column">
+
+    <nav class = "navbar bg-dark">
+      <a href="" class="navbar-brand nav-bar-brand">
+        <%= link_to "Veltios", root_path, class: "nav-bar-text" %>
+        <% if !current_user.nil? && current_user.admin %>
+        <%= link_to "Admin Panel", rails_admin_path, class: "nav-bar-text"%>
+        <% end %>
+      </a>
+      <li>
+        <a href="" class = "nav-item cart-text">
+          <%= render 'layouts/cart_text'%>
+        </a>
+      </li>
+    </nav>
+    </header>
+
+<section class = "">
+  <aside class="side-bar-aside-container">
+          <div class = "side-bar-container">
             <a href="" class="nav-link side-bar-text">Sensors</a>
             <a href="" class="nav-link side-bar-text">Tools</a>
             <a href="" class="nav-link side-bar-text">Kits and Sets</a>
             <a href="" class="nav-link side-bar-text">Compounds</a>
             <a href="" class="nav-link side-bar-text">Elements</a>
-          </nav>
+          </div>
 
-      </div>
-
-
-
-  <%= yield %>
-
-  <% else  %>
+  </aside>
 
 
-    <%= yield %>
+</section>
+
+<%= yield %>
+
+
+    <% else  %>
+
+
+      <%= yield %>
 
 
 
 
-    <% end %>
+      <% end %>
 
-</body>
+  </body>
+
+
+
+
+
 </html>
