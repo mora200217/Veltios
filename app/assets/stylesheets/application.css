@@ -14,7 +14,7 @@
 *= require_self
 */
 
-@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Ramabhadra|Timmana');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Ramabhadra|Timmana|Pattaya');
 
 *{
   padding: 0px;
@@ -253,6 +253,18 @@ width: 12%;
   font-family: 'Ramabhadra', sans-serif;
 }
 
+/* Carts */
+.cart-list-container{
+  position: fixed;
+  height: 100%;
+  width: 88%;
+  right: 0px;
+}
+
+.cart-list-div{
+  padding: 50px;
+  padding-top: 25px;
+}
 
 /* Elements */
 .elements-list-container{
@@ -262,6 +274,10 @@ width: 12%;
   right: 0px;
 }
 
+.elements-list-div{
+  padding: 50px;
+  padding-top: 25px;
+}
 
 /* Main Content */
 

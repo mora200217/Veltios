@@ -2,96 +2,89 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import url('https://fonts.googleapis.com/css?family=Pattaya');
 
+.elements-section-title{
+  font-family: 'Pattaya', sans-serif;
+  font-size: 40px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
 
-
- .element-section{
-   padding: 10px;
-  border-radius: 5px;
-width: 80%;
-margin: auto;
-padding-right: 150px;
-
- }
-
-.reserve-text{
-font-size: 18px;
+.elements-section-subtitle{
 
 }
 
-.reserve-row{
-  margin-top: 85px;
-  position: fixed;
-  font-size: 14px;
-  margin-left: 450px;
-  text-align: center;
-  float: left;
+
+// Elements List Section
+.element-section-main-div{
+  padding: 40px;
+  // background: blue;
+  // overflow-y: scroll;
+
 }
- .amount-text{
-   font-size: 12px;
-   display: inline-block;
-   text-align: right;
-   color: gray;
- }
+
+.element-section-info{
+  // background: red;
+  width: 60%;
+  right: 0px;
+  margin: 20px;
+  text-align: right;
+
+  padding-right: 5%;
+}
+.element-section-img-container{
+  display: block;
+  // background: green;
+  width: 230px;
+  height: 230px;
+  margin: auto;
+    position: relative;
+}
+
+.element-section-img{
+  display: inline-block;
+// background: red;
+border-style: none;
+  position: absolute;
+  margin: auto;
+  top: 0px;
+  bottom: 0px;
+  padding: 0px;
+  right: 0px;
+  left: 0px;
+}
 
 
-.name-text{
-  font-size: 27px;
+.element-section-details{
+  font-size: 15px;
+  display: inline-block;
+  color: #2c3e50;
+}
+
+.element-section-info-title{
+  font-size: 42px;
+  margin-bottom: 0px;
+}
+
+.element-section-description{
+  font-weight: lighter;
+  right: 0px;
+  margin-right: 10px;
+  padding-right: 0px;
   text-align: right;
 }
-.line-bg{
-background: #34495e;
-height: 100%;
-width: 400px;
 
-z-index: -1;
-position: fixed;
-display: block;
-margin: 0px auto;
-margin-left: 400px;
-
-
-}
-
-.description-text{
-text-align: right;
-font-size: 19px;
-font-weight: normal;
-margin-top: 0px;
-margin-bottom: 30px;
-}
-
-
-.btn-add{
-
-}
-
-
-
-.btn-group-element{
-
-}
-
-.int-input{
-  text-align: center;
-  width: 100px;
-}
-
-
-.input-element-group{
-  width: 130px;
+.element-section-btn-group{
+  width: 20%;
   float: right;
-}
-
-.img-element{
-  display: block;
-  position: absolute;
-  width: 200px;
+  margin-top: 20px;
 }
 
 
-.info-text{
-right: 10px;
-margin-top: -15px;
-
+// Utiliites
+.page-header{
+  width: 40%;
+  margin: auto;
+  padding-bottom: 0px;
 }

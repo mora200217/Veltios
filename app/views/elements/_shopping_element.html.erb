@@ -2,46 +2,88 @@
 
 
 
+  <% @elements.each do |element| %>
+  <div class="element-section-main-div">
+    <div class="row fluid-container">
+      <div class="element-section-img-container">
+      <%= image_tag element.preview.url(:medium), class: "float-left img-thumbnail rounded element-section-img"%>
+    </div>
+    <div class="element-section-info">
+      <h4 class = "element-section-info-title"><%= element.name %></small></h4>
+      <div class = "element-section-details-container text-right">
+        <h4 class="element-section-details">Amount: <span style="color: green"> <%= element.amount%></span></h4>
+        <h4 class="element-section-details">Brand: <span style="color: green"> <%= element.brand%></span></h4>
+        <h4 class="element-section-details">Uncertainty: <span style="color: green"> <%= element.uncertainty.to_s + " " + element.units.to_s.downcase%></span></h4>
+      </div>
+      <h6 class = "element-section-description"><%= element.desciption %></small></h6>
+      <%= form_for @reserve_item, :url => {:controller => :reserve_items, :action => :create} do |f| %>
+
+      <div class="element-section-btn-group">
+        <div class="btn-group-element input-group">
+          <%= f.number_field :amount, value: 1, class: "form-control int-input", min: 1, max: element.amount %>
+          <div class="input-group-btn btn-group">
+            <%= f.hidden_field :element_id, value: element.id %>
+            <%= f.submit "Reserve", class: "btn btn-danger"%>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+  </div>
+  <hr>
+</div>
+
+
+<% end %>
+
+
+</div>
+
+
+
+
+<!--
 <div class = "container elements-list-container">
 <h3 class="page-header text-center ">Elements in Interasesores Lab Community</h3>
 
 <div class="element-row" id = "element-row">
-  <br>
-  <% @elements.each do |element| %>
+<br>
+<% @elements.each do |element| %>
 
-  <div class="element-section">
+<div class="element-section">
 
-    <div class="row">
-      <div class="col-xs-3">
-        <%= image_tag element.preview.url(:medium), class: "img-element"%>
-      </div>
-      <div class="col-xs-8">
-        <h4 class = "name-text"><%= element.name %></small></h4>
-        <div class = "info-text text-right">
-          <h4 class=" amount-text">Amount: <span style="color: green"> <%= element.amount%></span></h4>
-          <h4 class="amount-text">Brand: <span style="color: green"> <%= element.brand%></span></h4>
-          <h4 class="amount-text">Uncertainty: <span style="color: green"> <%= element.uncertainty.to_s + " " + element.units.to_s.downcase%></span></h4>
-        </div>
-        <h6 class = "description-text"><%= element.desciption %></small></h6>
-        <%= form_for @reserve_item, :url => {:controller => :reserve_items, :action => :create} do |f| %>
+<div class="row">
+<div class="col-xs-3">
+<%= image_tag element.preview.url(:medium), class: "img-element"%>
+</div>
+<div class="col-xs-8">
+<h4 class = "name-text"><%= element.name %></small></h4>
+<div class = "info-text text-right">
+<h4 class=" amount-text">Amount: <span style="color: green"> <%= element.amount%></span></h4>
+<h4 class="amount-text">Brand: <span style="color: green"> <%= element.brand%></span></h4>
+<h4 class="amount-text">Uncertainty: <span style="color: green"> <%= element.uncertainty.to_s + " " + element.units.to_s.downcase%></span></h4>
+</div>
+<h6 class = "description-text"><%= element.desciption %></small></h6>
+<%= form_for @reserve_item, :url => {:controller => :reserve_items, :action => :create} do |f| %>
 
-        <div class="input-element-group">
-          <div class="btn-group-element input-group">
-            <%= f.number_field :amount, value: 1, class: "form-control int-input", min: 1, max: element.amount %>
-            <div class="input-group-btn btn-group">
-              <%= f.hidden_field :element_id, value: element.id %>
-              <%= f.submit "Reserve", class: "btn btn-danger"%>
-            </div>
-          </div>
-        </div>
-        <% end %>
-      </div>
-
-    </div>
-  </div>
-
-  <hr>
-  <% end %>
+<div class="input-element-group">
+<div class="btn-group-element input-group">
+<%= f.number_field :amount, value: 1, class: "form-control int-input", min: 1, max: element.amount %>
+<div class="input-group-btn btn-group">
+<%= f.hidden_field :element_id, value: element.id %>
+<%= f.submit "Reserve", class: "btn btn-danger"%>
+</div>
+</div>
+</div>
+<% end %>
 </div>
 
 </div>
+</div>
+
+<hr>
+<% end %>
+</div>
+
+</div> -->
