@@ -1,5 +1,5 @@
 <% if @reserve_items.size != 0%>
-<div class = "cart-reserve-btn-container">
+<div class = "cart-reserve-btn-container container">
  <%= button_to("Send Reservations", {action: "send_mail", controller: "reserve_items"}, {class: "btn btn-info cart-reserve-btn"}) %>
 </div>
 <% end%>
