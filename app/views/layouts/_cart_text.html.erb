@@ -1,4 +1,9 @@
-<%= link_to "#{current_reserve.reserve_items.size} Elements to reserve" , cart_path, class: "nav-bar-text-cart", id: "cart-amount" %>
+<li class = "nav-item">
+    <%= link_to "#{current_reserve.reserve_items.size} Elements to reserve" , cart_path, class: "nav-link nav-bar-text-cart", id: "cart-amount" %>
+
+</li>
 <% if current_user%>
-<%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-bar-text-cart", id: "logout-text"%>
+<li class = "nav-item">
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link  nav-bar-text-cart", id: "logout-text"%>
+</li>
 <% end %>

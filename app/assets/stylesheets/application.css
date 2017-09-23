@@ -29,6 +29,7 @@ img {
   margin:auto;
 }
 
+
 li{
   text-decoration: none;
   list-style-type: none;
@@ -193,7 +194,7 @@ input:checked + .slider:before {
   padding: 10px;
   margin-bottom: -1%;
   font-family: 'Timmana', sans-serif;
-  left: 0px;
+  display: inline-block;
   text-align: left;
 }
 
@@ -206,7 +207,8 @@ input:checked + .slider:before {
   margin: 0px;
   height: auto;
   padding: 10px;
-  left: 0px;
+right: 0px;
+float: right;
   text-align: left;
 }
 
@@ -219,6 +221,24 @@ input:checked + .slider:before {
 
 }
 
+.nav-bar-list-item{
+display: inline-block;
+float: right;
+}
+
+
+.nav-bar-collapse-container{
+  display: inline-block;
+  float: right;
+  text-align: right;
+}
+
+.nav-bar-collapse-ul{
+  float: right;
+  display: block;
+  position: relative;
+  right: 0px;
+}
 
 
 /* Side Bar */
@@ -293,3 +313,19 @@ width: 12%;
  .main-container{
    display: table;
  }
+
+
+ /* Nav Bar Brand */
+#admin_text{
+  color: #FEFEFE;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: lighter;
+  padding: 0px;
+  margin: 0px;
+  height: auto;
+  padding: 10px;
+  left: 0px;
+  text-align: left;
+
+}

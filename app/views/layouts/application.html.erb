@@ -12,6 +12,9 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <link href="../open-iconic-master/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+  <%= stylesheet_link_tag  "stylesheets/open-iconic-master/font/css/open-iconic-bootstrap.css"%> 
 </head>
 <body>
   <% if !current_user.nil?%>
@@ -21,55 +24,71 @@
 
 
 
-<header>
+  <header>
 
 
-    <nav class = "navbar bg-dark">
-      <a href="" class="navbar-brand nav-bar-brand">
-        <%= link_to "Veltios", root_path, class: "nav-bar-text" %>
+    <nav class = "navbar bg-dark navbar-expand-lg navbar-dark">
+
+      <!-- <a href="" class=" nav-bar-brand"> -->
+        <%= link_to "Veltios", root_path, class: "navbar-brand nav-bar-text" %>
         <% if !current_user.nil? && current_user.admin %>
-        <%= link_to "Admin Panel", rails_admin_path, class: "nav-bar-text"%>
+        <!-- <%= link_to "Admin Panel", rails_admin_path, id:"admin_text"%> -->
         <% end %>
-      </a>
-      <li>
-        <a href="" class = "nav-item">
-          <div class="cart-text">
-          <%= render 'layouts/cart_text'%>
-          </div>
-        </a>
-      </li>
+
+      <!-- </a> -->
+
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+
+      </button>
+
+
+
+
+
+      <div class="collapse navbar-collapse " id = "navbarSupportedContent">
+        <ul class = "navbar-nav" >
+          <!-- <div class=""> -->
+            <%= render 'layouts/cart_text'%>
+          <!-- </div> -->
+        </ul>
+
+      </div>
     </nav>
-    </header>
-
-<section class = "">
-  <aside class="side-bar-aside-container">
-          <div class = "side-bar-container">
-            <a href="" class="nav-link side-bar-text">Sensors</a>
-            <a href="" class="nav-link side-bar-text">Tools</a>
-            <a href="" class="nav-link side-bar-text">Kits</a>
-            <a href="" class="nav-link side-bar-text">Compounds</a>
-            <a href="" class="nav-link side-bar-text">Elements</a>
-          </div>
-
-  </aside>
 
 
-</section>
+  </header>
 
-<%= yield %>
+  <section class = "">
+    <aside class="side-bar-aside-container">
+      <div class = "side-bar-container">
+        <a href="" class="nav-link side-bar-text">Sensors</a>
+        <a href="" class="nav-link side-bar-text">Tools</a>
+        <a href="" class="nav-link side-bar-text">Kits</a>
+        <a href="" class="nav-link side-bar-text">Compounds</a>
+        <a href="" class="nav-link side-bar-text">Elements</a>
+      </div>
+
+    </aside>
 
 
-    <% else  %>
+  </section>
+
+  <%= yield %>
 
 
-      <%= yield %>
+  <% else  %>
+
+
+  <%= yield %>
 
 
 
 
-      <% end %>
+  <% end %>
 
-  </body>
+</body>
 
 
 
