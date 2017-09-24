@@ -14,7 +14,7 @@
 *= require_self
 */
 
-@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Ramabhadra|Timmana|Pattaya');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Ramabhadra|Timmana|Pattaya|Fugaz+One|Contrail+One');
 
 *{
   padding: 0px;
@@ -216,11 +216,14 @@ input:checked + .slider:before {
   padding: 0px;
   margin: 0px;
   height: auto;
-  padding: 10px;
-  margin-bottom: -1%;
-  font-family: 'Timmana', sans-serif;
-  display: inline-block;
-  text-align: left;
+  margin-left: 20px;
+  padding: 5px;
+  top: 0px;
+  vertical-align: middle;
+  /*background: red;*/
+  bottom: 0px;
+  font-family: 'Fugaz One';
+
 }
 
 .nav-bar-text-cart, .nav-bar-text-cart:hover{
@@ -278,6 +281,8 @@ right: 0px;
 
 }
 
+
+
 /* Side Bar */
 .side-bar-container{
 
@@ -285,7 +290,7 @@ right: 0px;
    width: 250px; /* 0 width - change this with JavaScript */
    position: fixed; /* Stay in place */
 z-index: 1;
-   background-color: #34495e; /* Black*/
+   background-color: #313638; /* Black*/
    overflow-x: hidden; /* Disable horizontal scroll */ /* Place content 60px from the top */
    transition: 0.5s;
 }
@@ -294,13 +299,14 @@ z-index: 1;
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #ecf0f1;
+  color: #E8E9EB;
   display: block;
-  transition: 0.3s
+  transition: 0.3s;
+  font-family: 'Contrail One';
 }
 
 .side-bar-container a:hover, .offcanvas a:focus{
-    color: #34495e;
+    color: #E0DFD5;
 }
 
 
@@ -387,31 +393,6 @@ z-index: 1;
 
 /*Side bar*/
 
-/* The side navigation menu
-
-/* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-    position: fixed;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {

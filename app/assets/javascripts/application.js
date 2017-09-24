@@ -20,11 +20,11 @@
 function toggleSideBar() {
   if(expanded != true){
     document.getElementById("side-bar").style.width = "250px";
-    document.getElementById("main").style.left = "250px";
+    document.getElementById("main").style.marginRight = "250px";
     expanded = true;
   }else{
     document.getElementById("side-bar").style.width = "0";
-    document.getElementById("main").style.left = "0";
+    document.getElementById("main").style.marginLeft = "0";
     expanded = false;
   }
 }
