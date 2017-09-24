@@ -13,8 +13,6 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-  <link href="../open-iconic-master/font/css/open-iconic-bootstrap.css" rel="stylesheet">
-  <%= stylesheet_link_tag  "stylesheets/open-iconic-master/font/css/open-iconic-bootstrap.css"%> 
 </head>
 <body>
   <% if !current_user.nil?%>
@@ -28,57 +26,92 @@
 
 
     <nav class = "navbar bg-dark navbar-expand-lg navbar-dark">
-
+      <button  onclick="toggleSideBar()"class="btn btn-outline-secondary" type="button" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <!-- <a href="" class=" nav-bar-brand"> -->
         <%= link_to "Veltios", root_path, class: "navbar-brand nav-bar-text" %>
         <% if !current_user.nil? && current_user.admin %>
         <!-- <%= link_to "Admin Panel", rails_admin_path, id:"admin_text"%> -->
         <% end %>
 
-      <!-- </a> -->
+        <!-- </a> -->
+        <div class="nav-bar-collapse-btns">
+            <button class="navbar-toggler nav-bar-cart-btn" type="button">
+              <span class="badge badge-dark"><%= link_to "#{current_reserve.reserve_items.size}" , cart_path, class: "icon-badge text-light", id: "cart-amount" %></span>
+              <%= open_iconic "icon", "basket"%>
+              <%= link_to "" , cart_path, class: "icon-badge text-light", id: "cart-amount" %>
+            </button>
+
+          <button onclick="toggleSideBar()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#data-side-bar" aria-controls="side-bar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
 
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-
-      </button>
 
 
 
 
-
-      <div class="collapse navbar-collapse " id = "navbarSupportedContent">
-        <ul class = "navbar-nav" >
-          <!-- <div class=""> -->
+        <div class="collapse navbar-collapse nav-bar-collapse-container " id = "navbarSupportedContent">
+          <ul class = "navbar-nav nav-bar-collapse-ul collapse navbar-collapse" >
+            <!-- <div class=""> -->
             <%= render 'layouts/cart_text'%>
-          <!-- </div> -->
-        </ul>
+            <!-- </div> -->
+          </ul>
 
-      </div>
-    </nav>
+        </div>
+      </nav>
 
 
-  </header>
+    </header>
 
-  <section class = "">
+    <!-- <section >
+      <aside class="side-bar-aside-container">
+        <div class = "side-bar-container"  id= "data-side-bar">
+          <ul>
+            <li class = "nav-item">
+              <a href="" class="nav-link side-bar-text">Sensors</a>
+            </li>
+            <li class = "nav-item">
+              <a href="" class="nav-link side-bar-text">Tools</a>
+            </li>
+            <li class = "nav-item">
+              <a href="" class="nav-link side-bar-text">Kits</a>
+            </li>
+            <li class = "nav-item">
+              <a href="" class="nav-link side-bar-text">Compounds</a>
+            </li>
+            <li class = "nav-item">
+              <a href="" class="nav-link side-bar-text">Elements</a>
+            </li>
+          </ul>
+        </div>
+
+      </aside>
+
+
+    </section> -->
+
+<section>
     <aside class="side-bar-aside-container">
-      <div class = "side-bar-container">
-        <a href="" class="nav-link side-bar-text">Sensors</a>
-        <a href="" class="nav-link side-bar-text">Tools</a>
-        <a href="" class="nav-link side-bar-text">Kits</a>
-        <a href="" class="nav-link side-bar-text">Compounds</a>
-        <a href="" class="nav-link side-bar-text">Elements</a>
-      </div>
+    <div id="side-bar" class="side-bar-container navbar-collapse" >
+      <a href="#">Sensors</a>
+      <a href="#">Tools</a>
+      <a href="#">Kits</a>
+      <a href="#">Compounds</a>
+      <a href="#">Elements</a>
+    </div>
+    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+    <div id="main">
+        <%= yield %>
+    </div>
 
     </aside>
+</section>
 
 
-  </section>
-
-  <%= yield %>
-
-
-  <% else  %>
+    <% else  %>
 
 
   <%= yield %>

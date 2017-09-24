@@ -14,3 +14,17 @@
 // = require turbolinks
 // = require_tree .
 // = require jquery
+
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+  var expanded = true;
+function toggleSideBar() {
+  if(expanded != true){
+    document.getElementById("side-bar").style.width = "250px";
+    document.getElementById("main").style.left = "250px";
+    expanded = true;
+  }else{
+    document.getElementById("side-bar").style.width = "0";
+    document.getElementById("main").style.left = "0";
+    expanded = false;
+  }
+}
