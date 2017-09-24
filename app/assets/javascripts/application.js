@@ -20,11 +20,14 @@
 function toggleSideBar() {
   if(expanded != true){
     document.getElementById("side-bar").style.width = "250px";
-    document.getElementById("main").style.marginRight = "250px";
+    document.getElementById("elements-list-container").style.left = "250px";
+    var w = window.innerWidth;
+    // document.getElementById("elements-list-container").style.width = w - 250 + "px";
     expanded = true;
   }else{
     document.getElementById("side-bar").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
+    document.getElementById("elements-list-container").style.left = "0";
+    // document.getElementById("elements-list-container").style.width = "100%";
     expanded = false;
   }
 }
