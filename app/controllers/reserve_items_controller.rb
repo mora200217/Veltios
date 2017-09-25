@@ -55,6 +55,7 @@ end
     @element.update_attribute(:amount, @current_amount + @reserve_item[:amount].to_i)
     @reserve_item.destroy # Destroy given item
     @reserve_items = @reserve.reserve_items # Save to current reservation items
+    redirect_to cart
 
   end
 

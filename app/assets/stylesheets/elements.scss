@@ -9,6 +9,7 @@
   font-size: 40px;
   margin-bottom: 0px;
   padding-bottom: 0px;
+
 }
 
 .elements-section-subtitle{
@@ -63,10 +64,8 @@ border-style: none;
 
 width: 100%;
 margin: auto;
-
-
-
 }
+
 
 .element-section-details{
   font-size: 15px;
@@ -78,6 +77,8 @@ margin: auto;
   font-size: 42px;
   margin-bottom: 0px;
   font-family: 'Francois One', sans-serif;
+  right: 0px;
+  text-align: right;
 }
 
 .element-section-description{
@@ -87,6 +88,44 @@ margin: auto;
   padding-right: 0px;
   text-align: right;
 }
+
+
+// Card Variants
+.element-section-details-card{
+  font-size: 15px;
+  display: inline-block;
+  color: #2c3e50;
+}
+
+.element-section-info-title-card{
+  font-size: 32px;
+  margin-bottom: 0px;
+  font-family: 'Francois One', sans-serif;
+  right: 0px;
+  text-align: left;
+}
+
+.element-section-description-card{
+  font-weight: lighter;
+  left: 0px;
+  margin-right: 10px;
+  padding-right: 0px;
+  text-align: left;
+}
+
+.form-input-btn-card{
+// width: 200px;
+display: block;
+}
+
+
+.element-section-btn-group-card{
+  width: 20%;
+  float: right;
+
+  margin-top: 20px;
+}
+
 
 .element-section-btn-group{
   width: 20%;
@@ -100,4 +139,11 @@ margin: auto;
   width: 40%;
   margin: auto;
   padding-bottom: 0px;
+}
+
+
+.card-img-main{
+  width: 20rem;
+  display: block;
+position: absolute; padding: 20px;
 }
