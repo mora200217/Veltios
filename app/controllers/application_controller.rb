@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   # Current Reservation function
   def current_reserve
       @elements = Element.all
-      @reserves_done = Array.new
+     @reserves_done = Array.new
     if !session[:reserve_id].nil? # Check for Reservation session existance
       Reserve.find(session[:reserve_id])  # Find reservation session
     else
