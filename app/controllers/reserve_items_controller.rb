@@ -21,7 +21,7 @@ class ReserveItemsController < ApplicationController
 
 
 
-    redirect_to root_path
+    # redirect_to root_path
   end
 
 
