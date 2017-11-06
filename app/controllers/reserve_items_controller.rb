@@ -5,7 +5,7 @@ class ReserveItemsController < ApplicationController
   # Created Method
   def create
 @reserve = current_reserve # Get current reserve grouo
-    if !@reserve.reserve_items.where(reserve_items_params[:element_id]).exists?(conditions =  :none)
+    if !@reserve.reserve_items.where(id: reserve_items_params[:element_id]).exists?(conditions =  :none)
       @reserve_item = @reserve.reserve_items.new(reserve_items_params) # Create a new item, based in private params function
       @reserve.save
       session[:reserve_id] = @reserve.id # Create a session with reservation id
