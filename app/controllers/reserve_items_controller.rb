@@ -12,10 +12,10 @@ class ReserveItemsController < ApplicationController
       @element = Element.find(@reserve_item[:element_id])
       @initial_element_amount = @element.amount.to_i # Declare initial amount value of the element
       @element.update_attribute(:amount, @initial_element_amount - @reserve_item[:amount].to_i)
-    else
-      @reserve_item = @reserve.reserve_items.where(reserve_items_params[:element_id])
-      # @reserve_item.first.update_attributes(reserve_items_params)
-      @reserve_items = @reserve.reserve_items
+    # else
+      # @reserve_item = @reserve.reserve_items.where(reserve_items_params[:element_id])
+      # # @reserve_item.first.update_attributes(reserve_items_params)
+      # @reserve_items = @reserve.reserve_items
 
     end
 
