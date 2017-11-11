@@ -16,7 +16,7 @@
 // = require jquery
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
-  var expanded = true;
+  var expanded = false;
 function toggleSideBar() {
   if(expanded != true){
     expandSideBar();
@@ -24,6 +24,10 @@ function toggleSideBar() {
     contractSideBar();
   }
 }
+
+$(document).ready(function(){
+      contractSideBar();
+});
 
 $(window).resize(function() {
       if ($(this).width() < 990) {

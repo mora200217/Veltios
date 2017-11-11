@@ -14,18 +14,10 @@
   <%= csrf_meta_tags %>
 
 </head>
-<body>
+
   <% if !current_user.nil?%>
-
-
-
-
-
-
   <header>
-
-
-    <nav class = "navbar bg-dark navbar-expand-lg navbar-dark nav-bar-main">
+    <nav class = "navbar fixed-top bg-dark navbar-expand-lg navbar-dark nav-bar-main">
       <button  onclick="toggleSideBar()"class="btn btn-outline-secondary" type="button" >
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -43,16 +35,8 @@
               <%= open_iconic "icon", "basket"%>
               <%= link_to "" , cart_path, class: "icon-badge text-light", id: "cart-amount" %>
             </button>
-<!--
-          <button onclick="toggleSideBar()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#data-side-bar" aria-controls="side-bar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button> -->
+
         </div>
-
-
-
-
-
 
         <div class="collapse navbar-collapse nav-bar-collapse-container " id = "navbarSupportedContent">
           <ul class = "navbar-nav nav-bar-collapse-ul collapse navbar-collapse" >
@@ -66,36 +50,12 @@
 
 
     </header>
+    <br>
+    <br>
+    <br>
+<body>
 
-    <!-- <section >
-      <aside class="side-bar-aside-container">
-        <div class = "side-bar-container"  id= "data-side-bar">
-          <ul>
-            <li class = "nav-item">
-              <a href="" class="nav-link side-bar-text">Sensors</a>
-            </li>
-            <li class = "nav-item">
-              <a href="" class="nav-link side-bar-text">Tools</a>
-            </li>
-            <li class = "nav-item">
-              <a href="" class="nav-link side-bar-text">Kits</a>
-            </li>
-            <li class = "nav-item">
-              <a href="" class="nav-link side-bar-text">Compounds</a>
-            </li>
-            <li class = "nav-item">
-              <a href="" class="nav-link side-bar-text">Elements</a>
-            </li>
-          </ul>
-        </div>
-
-      </aside>
-
-
-    </section> -->
-
-
-    <div id="side-bar" class="side-bar-container navbar-collapse" >
+    <div id="side-bar" class="side-bar-container navbar-collapse " >
       <a href="#">Sensors</a>
       <a href="#">Tools</a>
       <a href="#">Kits</a>
@@ -120,11 +80,28 @@
 
   <% end %>
 
+
 </body>
+<!-- <section> -->
 
-<footer class = "footer">
+<div class="footer-div">
 
-</footer>
+    <div class="row">
+      <div class="col footer-text">
+        <h7 href="">Veltios Web App created by Andres Morales. Bogota, Colombia.</h7>
+      </div>
+      <div class="col footer-text">
+        <ul class = "row">
+          <h7 href="" class="col">A</h7>
+          <h7 href="" class="col">B</h7>
+          <h7 href="" class="col">C</h7>
+        </ul>
+      </div>
+</div>
+
+</div>
+<!-- </section> -->
+
 
 
 

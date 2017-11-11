@@ -20,6 +20,10 @@
   padding: 0px;
   margin: 0px;
 }
+
+body{
+  height: 100%;
+}
 img {
   position: absolute;
   top:0;
@@ -287,7 +291,7 @@ right: 0px;
 .side-bar-container{
 
     height: 100%; /* 100% Full-height */
-   width: 250px; /* 0 width - change this with JavaScript */
+   width: 0px; /* 0 width - change this with JavaScript */
    position: fixed; /* Stay in place */
 z-index: 1;
    background-color: #313638; /* Black*/
@@ -442,3 +446,29 @@ transition: 0.5s;
 
   }
 }
+
+
+
+ /* Footer */
+ .footer-div{
+   position: absolute;
+   right: 0;
+   bottom: -100px;
+   left: 0;
+   padding: 1rem;
+   height: 100px;
+   background-color: #121416;
+   text-align: center;
+   color: #596268;
+ }
+
+ .navbar-fixed-bottom{
+   bottom: 0px;
+   position: fixed;
+ }
+
+ .footer-text{
+   margin: auto;
+   top: 0px;
+   bottom: 0px;
+ }
