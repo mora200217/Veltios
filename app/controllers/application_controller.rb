@@ -6,9 +6,12 @@ class ApplicationController < ActionController::Base
 
   # Current Reservation function
   def current_reserve
- # Public Variables Initial OVerall Declaration
+    # Public Variables Initial OVerall Declaration
     @elements = Element.all
-     @reserves_done = Array.new
+    @reserves_done = Array.new
+
+    require
+
     if !session[:reserve_id].nil? # Check for Reservation session existance
       Reserve.find(session[:reserve_id])  # Find reservation session
     else
