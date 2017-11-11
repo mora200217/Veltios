@@ -19,8 +19,6 @@ class ReserveItemsController < ApplicationController
 
     end
 
-
-
     redirect_to root_path
   end
 
@@ -46,7 +44,6 @@ class ReserveItemsController < ApplicationController
 
   end
 
-
   # Send Mail method
   def send_mail
     @reserve_items = current_reserve.reserve_items
@@ -55,6 +52,15 @@ class ReserveItemsController < ApplicationController
     @reserve_items.delete_all
     redirect_to root_path
   end
+
+
+  # Service Google Api redirection
+
+def redirect
+  client = Signet::OAuth2::Client.new(client_options) # Access to Client submodule and applied creation method - new
+
+  redirect_to client.authorization_uri.to_s # Redirect to client OAUTH uri
+end
 
   # Privates Methods Initializer
   private
@@ -72,7 +78,7 @@ class ReserveItemsController < ApplicationController
       authorization_uri: 'https://accounts.google.com/o/oauth2/auth', # Authentication url for google linkage
       token_credential_uri: 'https://accounts.google.com/o/oauth2/token', # Authentication url for google linkage
       scope: Google::Apis::CalendarV3::AUTH_CALENDAR,  # Declaration of initial auth calendar service scope
-      redirect_uri: callback_url # initializate callback url for service appliance (?) 
+      redirect_uri: callback_url # initializate callback url for service appliance (?)
     }
   end
 end
