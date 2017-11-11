@@ -33,6 +33,7 @@
         <%= link_to "Veltios", root_path, class: "navbar-brand nav-bar-text" %>
         <% if !current_user.nil? && current_user.admin %>
         <%= link_to "Admin", rails_admin_path, id:"admin_text"%>
+        <%= link_to "Calendar ", redirect_path, id:"admin_text"%>
         <% end %>
 
         <!-- </a> -->

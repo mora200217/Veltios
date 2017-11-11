@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     @elements = Element.all
     @reserves_done = Array.new
 
-    require
+    # require/
 
     if !session[:reserve_id].nil? # Check for Reservation session existance
       Reserve.find(session[:reserve_id])  # Find reservation session

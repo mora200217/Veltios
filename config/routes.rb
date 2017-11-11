@@ -13,4 +13,12 @@ Rails.application.routes.draw do
 
   root "elements#index"
 
+# Routes for google api authorization methods
+  get '/redirect', to: 'reserve_items#redirect', as: 'redirect'
+  get '/callback', to: 'reserve_items#callback', as: 'callback'
+
+#Routes for calendars display
+  get '/calendars', to: 'reserve_items#calendars', as: 'calendars'
+
+
 end

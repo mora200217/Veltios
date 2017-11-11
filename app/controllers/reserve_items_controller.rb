@@ -56,11 +56,47 @@ class ReserveItemsController < ApplicationController
 
   # Service Google Api redirection
 
-def redirect
-  client = Signet::OAuth2::Client.new(client_options) # Access to Client submodule and applied creation method - new
+  def redirect
 
-  redirect_to client.authorization_uri.to_s # Redirect to client OAUTH uri
-end
+    if current_user.admin
+      client = Signet::OAuth2::Client.new(client_options) # Access to Client submodule and applied creation method - new
+      redirect_to client.authorization_uri.to_s # Redirect to client OAUTH uri
+
+    else
+      redirect_to root_path
+    end
+
+  end
+
+
+  # callback methods
+  def callback
+    client = Signet::OAuth2::Client.new(client_options)
+    client.code = params[:code]
+
+    response = client.fetch_access_token!
+
+    session[:authorization] = response
+
+   redirect_to calendars_path
+   end
+
+  def calendars
+      client = Signet::OAuth2::Client.new(client_options)
+      client.update!(session[:authorization])
+
+      service = Google::Apis::CalendarV3::CalendarService.new
+      service.authorization = client
+
+      @calendar_list = service.list_calendar_lists
+
+
+    end
+
+    def new_calendar
+      calendar = Google::Apis::CalendarV3::Calendar.new(calendar_options)
+      result = client.insert_calendar(calendar)
+    end
 
   # Privates Methods Initializer
   private
@@ -70,6 +106,7 @@ end
     return @params
   end
 
+private
   # google api registration OAUTH private method
   def client_options
     {
@@ -79,6 +116,12 @@ end
       token_credential_uri: 'https://accounts.google.com/o/oauth2/token', # Authentication url for google linkage
       scope: Google::Apis::CalendarV3::AUTH_CALENDAR,  # Declaration of initial auth calendar service scope
       redirect_uri: callback_url # initializate callback url for service appliance (?)
+    }
+  end
+
+  def calendar_options
+    {
+      summary: "TEST Calendar"
     }
   end
 end
