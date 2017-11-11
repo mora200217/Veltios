@@ -32,7 +32,8 @@ gem 'paperclip', '~> 5.1'
 gem 'aws-sdk', '~> 2.3'
 gem 'open-iconic-rails', '~> 0.0.1'
 
-gem 'google-api-client', '~> 0.17.0'
+gem 'google-api-client', '~> 0.17.0' , require: 'google/apis/calendar_v3'
+
 # gem 'rails_admin_example_theme', :git => 'git://github.com/bbenezech/rails_admin_example_theme.git'
 
 
