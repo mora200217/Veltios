@@ -120,6 +120,6 @@ Rails.application.configure do
 
 
   # Encryption initial configuration method
-  config.read_encrypted_secrets = true
+  # config.read_encrypted_secrets = true
 
 end
