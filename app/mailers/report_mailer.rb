@@ -1,10 +1,6 @@
 class ReportMailer < ApplicationMailer
 default from: 'Veltios | Modern Lab App <veltiosapp@gmail.com>'
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.report_mailer.receipt.subject
-  #
+
   def receipt(reserve_items, current_user)
     @reserve_items = reserve_items
     @current_user = current_user
@@ -18,10 +14,3 @@ default from: 'Veltios | Modern Lab App <veltiosapp@gmail.com>'
   mail(to: @current_user.email.to_s, subject: 'Bienvenido a Veltios!')
   end
 end
-
-# private
-#
-# def send_mail(parametros, email, asunto)
-#   @no
-#   mail()
-# end
