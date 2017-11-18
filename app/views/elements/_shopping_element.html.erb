@@ -17,7 +17,7 @@
             <h4 class="element-section-details">Uncertainty: <span style="color: green"> <%= element.uncertainty.to_s + " " + element.units.to_s.downcase%></span></h4>
           </div>
           <h6 class = "element-section-description"><%= element.desciption %></small></h6>
-          <%= form_for @reserve_item, :url => {:controller => :reserve_items, :action => :create} do |f| %>
+          <%= form_for @reserve_item, :url => {:controller => :reserve_items, :action => :create, :layout => :none} do |f| %>
 
           <div class="element-section-btn-group">
             <div class="btn-group-element input-group">
