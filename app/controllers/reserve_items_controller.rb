@@ -16,10 +16,10 @@ class ReserveItemsController < ApplicationController
       # @reserve_item = @reserve.reserve_items.where(reserve_items_params[:element_id])
       # # @reserve_item.first.update_attributes(reserve_items_params)
       # @reserve_items = @reserve.reserve_items
+      redirect_to root_path
 
     end
 
-    redirect_to root_path
   end
 
 
