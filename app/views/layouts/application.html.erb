@@ -1,60 +1,49 @@
 
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
   <title> Veltios App </title>
   <%= favicon_link_tag 'favicon.ico'%>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js' %>
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
 </head>
-
-  <% if !current_user.nil?%>
-  <header>
+  <body>
     <nav class = "navbar fixed-top bg-dark navbar-expand-lg navbar-dark nav-bar-main">
       <button  onclick="toggleSideBar()"class="btn btn-outline-secondary" type="button" >
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- <a href="" class=" nav-bar-brand"> -->
-        <%= link_to "Veltios", root_path, class: "navbar-brand nav-bar-text" %>
-        <% if !current_user.nil? && current_user.admin %>
-        <%= link_to "Admin", rails_admin_path, id:"admin_text"%>
-        <%= link_to "Calendar ", redirect_path, id:"admin_text"%>
-        <% end %>
+      <%= link_to "Veltios", root_path, class: "navbar-brand nav-bar-text" %>
+      <% if !current_user.nil? && current_user.admin %>
+      <%= link_to "Admin", rails_admin_path, id:"admin_text"%>
+      <%= link_to "Calendar ", redirect_path, id:"admin_text"%>
+      <% end %>
 
-        <!-- </a> -->
-        <div class="nav-bar-collapse-btns">
-            <button class="navbar-toggler nav-bar-cart-btn" type="button">
-              <span class="badge badge-dark"><%= link_to "#{current_reserve.reserve_items.size}" , cart_path, class: "icon-badge text-light", id: "cart-amount" %></span>
-              <%= open_iconic "icon", "basket"%>
-              <%= link_to "" , cart_path, class: "icon-badge text-light", id: "cart-amount" %>
-            </button>
-
-        </div>
-
-        <div class="collapse navbar-collapse nav-bar-collapse-container " id = "navbarSupportedContent">
-          <ul class = "navbar-nav nav-bar-collapse-ul collapse navbar-collapse" >
-            <!-- <div class=""> -->
-            <%= render 'layouts/cart_text'%>
-            <!-- </div> -->
-          </ul>
-
-        </div>
-      </nav>
+      <!-- </a> -->
+      <div class="nav-bar-collapse-btns">
+        <button class="navbar-toggler nav-bar-cart-btn" type="button">
+          <span class="badge badge-dark"><%= link_to "#{current_reserve.reserve_items.size}" , cart_path, class: "icon-badge text-light", id: "cart-amount" %></span>
+          <%= open_iconic "icon", "basket"%>
+          <%= link_to "" , cart_path, class: "icon-badge text-light", id: "cart-amount" %>
+        </button>
 
 
-    </header>
-    <br>
-    <br>
-    <br>
-<body>
+      </div>
 
+      <div class="collapse navbar-collapse nav-bar-collapse-container " id = "navbarSupportedContent">
+        <ul class = "navbar-nav nav-bar-collapse-ul collapse navbar-collapse" >
+          <!-- <div class=""> -->
+          <%= render 'layouts/cart_text'%>
+          <!-- </div> -->
+        </ul>
+
+      </div>
+    </nav>
+    <br><br><br>
     <div id="side-bar" class="side-bar-container navbar-collapse " >
       <a href="#">Sensors</a>
       <a href="#">Tools</a>
@@ -62,60 +51,35 @@
       <a href="#">Compounds</a>
       <a href="#">Elements</a>
     </div>
-    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+    <%= yield %>
+    <!-- <div class="footer-div">
 
-        <%= yield %>
+      <div class="row footer-body">
+        <div class="col footer-text">
+          <h7 href="">Veltios Web App created by Andres Morales. Bogota, Colombia.</h7>
+        </div>
+        <div class="col footer-text">
+          <ul class = "col">
+            <h7 href="" class="col footer-logo">
+              <a href="https://github.com/mora200217/Veltios" target="_blank">
+                <%= image_tag("github_logo@0.5x.png", :alt => "rss feed", :class => "img-rounded footer-img") %>
+              </a>
 
-
-
-
-
-    <% else  %>
-
-
-  <%= yield %>
-
-
-
-
-  <% end %>
-
-
-</body>
-<!-- <section> -->
-
-<div class="footer-div">
-
-    <div class="row footer-body">
-      <div class="col footer-text">
-        <h7 href="">Veltios Web App created by Andres Morales. Bogota, Colombia.</h7>
-      </div>
-      <div class="col footer-text">
-        <ul class = "col">
-          <h7 href="" class="col footer-logo">
-<a href="https://github.com/mora200217/Veltios" target="_blank">
-   <%= image_tag("github_logo@0.5x.png", :alt => "rss feed", :class => "img-rounded footer-img") %>
-</a>
-
-          </h7>
-          <h7 href="" class="col footer-logo">
-            <a href="https://www.facebook.com/colegionuevayorkoficial" target="_blank">
-            <%= image_tag("facebook_logo@0.5x.png", :alt => "rss feed", :class => "img-rounded footer-img") %>
-            </a>
-          </h7>
-          <h7 href="" class=" col footer-logo">
-            <a href="http://colegionuevayork.edu.co/" target="_blank">
-            <%= image_tag("cny_logo@0.5x.png", :alt => "rss feed", :class => "img-rounded footer-img") %>
-            </a>
-          </h7>
-        </ul>
-      </div>
-</div>
-
-</div>
-<!-- </section> -->
-
-
-
+            </h7>
+            <h7 href="" class="col footer-logo">
+              <a href="https://www.facebook.com/colegionuevayorkoficial" target="_blank">
+                <%= image_tag("facebook_logo@0.5x.png", :alt => "rss feed", :class => "img-rounded footer-img") %>
+              </a>
+            </h7>
+            <h7 href="" class=" col footer-logo">
+              <a href="http://colegionuevayork.edu.co/" target="_blank">
+                <%= image_tag("cny_logo@0.5x.png", :alt => "rss feed", :class => "img-rounded footer-img") %>
+              </a>
+            </h7>
+          </ul>
+        </div>
+        </div>
+        </div> -->
+  </body>
 
 </html>

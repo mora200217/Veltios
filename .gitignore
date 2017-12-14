@@ -26,3 +26,7 @@
 
 # Ignore encrypted secrets key file.
 config/secrets.yml.key
+
+
+#Ignore test html template mail design
+/app/views/report_mailer/*.html

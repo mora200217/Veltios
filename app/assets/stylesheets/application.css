@@ -21,9 +21,6 @@
   margin: 0px;
 }
 
-body{
-  height: 100%;
-}
 img {
   position: absolute;
   top:0;
@@ -352,12 +349,7 @@ transition: 0.5s;
 }
 
 /* Elements */
-.elements-list-container{
-  position: fixed;
-  height: 100%;
-  width: 88%;
-  right: 0px;
-}
+
 
 .elements-list-div{
   padding: 50px;
@@ -451,6 +443,7 @@ transition: 0.5s;
 
  /* Footer */
  .footer-div{
+   /*position: absolute;*/
    position: absolute;
    right: 0;
    bottom: -200px;
