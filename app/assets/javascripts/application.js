@@ -16,23 +16,41 @@
 // = require jquery
 // = require bootstrap-datepicker
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
-  var expanded = false;
+var expanded = false;
+var onSearch = false;
+
+var KEYCODE_ESC = 27;
 function toggleSideBar() {
-  if(expanded != true){
+  if(!expanded){
     expandSideBar();
   }else{
     contractSideBar();
   }
 }
 
+function toggleSearchBar() {
+  if(!onSearch && expanded){
+    contractSideBar();
+    expandSearchBar();
+  }else if(onSearch != true ){
+    expandSearchBar();
+  }else{
+    contractSearchBar();
+  }
+}
+
+
+
+
+
 $(document).ready(function(){
-      contractSideBar();
+  contractSideBar();
 });
 
 $(window).resize(function() {
-      if ($(this).width() < 990) {
-        contractSideBar();
-      }
+  if ($(this).width() < 990) {
+    contractSideBar();
+  }
 });
 
 function expandSideBar(){
@@ -49,13 +67,39 @@ function contractSideBar(){
   document.getElementById("elements-list-container").style.left = "0";
   document.getElementById("float-but").style.left = "92%";
   document.getElementById("float-but").style.background = "#e74c3c";
-    document.getElementById("float-but").style.boxShadow = "0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15)";
-    expanded = false;
+  document.getElementById("float-but").style.boxShadow = "0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15)";
+  expanded = false;
 }
 
+function expandSearchBar(){
+  document.getElementById("sb-move-div").style.transform =  "scale3d(0.7,0.7,1)";
+  document.getElementById("bg-search").style.display = "block";
+  document.getElementById("float-but").style.display = "none";
+  document.getElementById("bg-search").style.opacity = "0.9";
+  document.getElementById("input-search").focus();
+  onSearch = true;
+}
+
+function contractSearchBar(){
+  document.getElementById("sb-move-div").style.transform =  "scale3d(1,1,1)";
+  document.getElementById("float-but").style.display = "block";
+  document.getElementById("bottom-search").style.width = "0px";
+  document.getElementById("bg-search").style.display = "none";
+
+  // document.getElementById("bottom-search").focus();
+  onSearch = false;
+}
+
+function expandBottom(){
+    document.getElementById("bottom-search").style.width = "100%";
+}
 
 $('.datepicker').datepicker();
 $('.datepicker').datepicker({
-    format: 'mm/dd/yyyy',
-    startDate: '-3d'
+  format: 'mm/dd/yyyy',
+  startDate: '-3d'
+});
+
+$(document).keyup(function(e) {
+  if (e.keyCode == KEYCODE_ESC) contractSearchBar();
 });

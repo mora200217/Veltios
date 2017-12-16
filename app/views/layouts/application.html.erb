@@ -55,19 +55,20 @@
     </div>
 
     <!-- floating button -->
-    <a href="" class="float" id = "float-but">
+    <a class="float" id = "float-but" onclick="toggleSearchBar()">
       <%= open_iconic "float-icon", "magnifying-glass"%>
     </a>
 
 
+
     <% end %>
+
+    <div class="move" id = "sb-move-div" style="cursor:pointer">
     <%= yield %>
+    </div>
 
-
-
-
-
-    <!-- <div class="footer-div">
+<!--
+<div class="footer-div footer">
 
       <div class="row footer-body">
         <div class="col footer-text">
@@ -94,6 +95,22 @@
           </ul>
         </div>
         </div> -->
+
+
+         <!-- Search Engine -->
+    <div class="bg-search" id = "bg-search">
+<form class="form-search" action="index.html" method="post">
+  <input type="text" id = "input-search" name=""class = "search-bar" placeholder="Type Bro!" onfocus="expandBottom()">
+    <span class = "bottom-bg-search" id = "bottom-search"> </span>
+    <div class = "label-div">
+  <label class="label-search">Just keep searching or go out...you know...with esc</label>
+  <h1 class = "subtitle-search">Gandalf Would suggest </h1>
+  <p class = "description-search">The force is strong with this one, is you search with key words. Try to search like Oxygen Sensor, Movement Sensor, etc</p>
+  </div>
+
+</form>
+
+    </div>
   </body>
 
 </html>
