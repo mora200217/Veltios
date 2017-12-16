@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
     # Public Variables Initial OVerall Declaration
     @elements = Element.all
     @reserves_done = Array.new
-
+    @current_date = Time.now.strftime("%d / %b / %Y")
+    @default_date = true # 
 
     # require/
 

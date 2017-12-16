@@ -34,6 +34,8 @@ gem 'open-iconic-rails', '~> 0.0.1'
 
 gem 'google-api-client', '~> 0.17.0' , require: 'google/apis/calendar_v3'
 
+
+gem 'bootstrap-datepicker-rails', '~> 1.7', '>= 1.7.1.1'
 # gem 'rails_admin_example_theme', :git => 'git://github.com/bbenezech/rails_admin_example_theme.git'
 
 

@@ -14,7 +14,7 @@
 // = require turbolinks
 // = require_tree .
 // = require jquery
-
+// = require bootstrap-datepicker
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
   var expanded = false;
 function toggleSideBar() {
@@ -38,11 +38,24 @@ $(window).resize(function() {
 function expandSideBar(){
   document.getElementById("side-bar").style.width = "250px";
   document.getElementById("elements-list-container").style.left = "250px";
+  document.getElementById("float-but").style.left = "80px";
+  document.getElementById("float-but").style.background = "none";
+  document.getElementById("float-but").style.boxShadow = "none";
   expanded = true;
 }
 
 function contractSideBar(){
   document.getElementById("side-bar").style.width = "0";
   document.getElementById("elements-list-container").style.left = "0";
+  document.getElementById("float-but").style.left = "92%";
+  document.getElementById("float-but").style.background = "#e74c3c";
+    document.getElementById("float-but").style.boxShadow = "0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15)";
     expanded = false;
 }
+
+
+$('.datepicker').datepicker();
+$('.datepicker').datepicker({
+    format: 'mm/dd/yyyy',
+    startDate: '-3d'
+});

@@ -12,6 +12,7 @@
 *
 *= require_tree .
 *= require_self
+*= require bootstrap-datepicker3
 */
 
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One|Ramabhadra|Timmana|Pattaya|Fugaz+One|Contrail+One');
@@ -282,7 +283,41 @@ right: 0px;
 
 }
 
+.cart-text-datepicker{
+  background: none;
+  border-style: none;
+  text-align: center;
+  border-radius: 3px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+color: transparent;
+}
 
+.cart-text-datepicker:hover{
+  background: none;
+  border-style: none;
+  text-align: center;
+  border-radius: 3px;
+  margin: 0px;
+  padding: 0px;
+  outline: none;
+  border: none;
+  color: transparent;
+
+}
+
+.cart-text-datepicker:focus{
+  background: none;
+  border-style: none;
+  text-align: center;
+  border-radius: 3px;
+  margin: 0px;
+  padding: 0px;
+  outline: none;
+  border: none;
+color: transparent;
+}
 
 /* Side Bar */
 .side-bar-container{
@@ -477,4 +512,33 @@ transition: 0.5s;
 
 .footer-img{
   width: 60px;
+}
+
+/* Floating button */
+.float{
+  background: red;
+  border-radius: 50px;
+  position: fixed;
+  width: 75px;
+  height: 75px;
+  bottom: 60px;
+  /* right: 50px; */
+  background: #e74c3c;
+  z-index: 3;
+  text-align: center;
+  /* box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15); */
+  -webkit-transition: 0.9s;
+}
+
+
+.float-icon{
+  width: 50%;
+  margin: auto;
+  top: 0px;
+  bottom: 0px;
+
+margin-top: 25%;
+padding: 5px;
+fill: white;
+
 }

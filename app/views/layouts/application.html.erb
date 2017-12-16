@@ -12,6 +12,8 @@
   <%= csrf_meta_tags %>
 </head>
   <body>
+
+    <% if !current_user.nil?%>
     <nav class = "navbar fixed-top bg-dark navbar-expand-lg navbar-dark nav-bar-main">
       <button  onclick="toggleSideBar()"class="btn btn-outline-secondary" type="button" >
         <span class="navbar-toggler-icon"></span>
@@ -51,7 +53,20 @@
       <a href="#">Compounds</a>
       <a href="#">Elements</a>
     </div>
+
+    <!-- floating button -->
+    <a href="" class="float" id = "float-but">
+      <%= open_iconic "float-icon", "magnifying-glass"%>
+    </a>
+
+
+    <% end %>
     <%= yield %>
+
+
+
+
+
     <!-- <div class="footer-div">
 
       <div class="row footer-body">
@@ -77,7 +92,6 @@
               </a>
             </h7>
           </ul>
-        </div>
         </div>
         </div> -->
   </body>

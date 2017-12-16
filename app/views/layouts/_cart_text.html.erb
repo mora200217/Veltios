@@ -1,17 +1,20 @@
 <li class = "nav-item">
-<!-- <span class="badge badge-dark"> -->
-<h4 class = "nav-link nav-bar-text-cart"> 02 / 12</h4>
-
-<!-- </span> -->
+  <!-- <span class="badge badge-dark"> -->
+  <% if @default_date%>
+  <span> </span>
+  <input type="text" style="cursor:pointer" class = "cart-text-datepicker nav-bar-text-cart nav-link " data-provide='datepicker' data-date-format="dd / M / yyyy" data-date-days-of-week-disabled="06" data-date-start-date = "<%=@current_date%>" placeholder="<%=@current_date %>" >
+  <%else %>
+  <% end %>
+  <!-- </span> -->
 
 </li>
 
 <li class = "nav-item">
-    <%= link_to "#{current_reserve.reserve_items.size} Elements to reserve" , cart_path, class: "nav-link nav-bar-text-cart", id: "cart-amount" %>
+  <%= link_to "#{current_reserve.reserve_items.size} Elements to reserve" , cart_path, class: "nav-link nav-bar-text-cart", id: "cart-amount" %>
 
 </li>
 <% if current_user%>
 <li class = "nav-item">
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link  nav-bar-text-cart", id: "logout-text"%>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link  nav-bar-text-cart", id: "logout-text"%>
 </li>
 <% end %>
