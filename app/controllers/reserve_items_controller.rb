@@ -73,30 +73,27 @@ class ReserveItemsController < ApplicationController
   def callback
     client = Signet::OAuth2::Client.new(client_options)
     client.code = params[:code]
-
     response = client.fetch_access_token!
-
     session[:authorization] = response
-
-   redirect_to calendars_path
-   end
+    redirect_to calendars_path
+  end
 
   def calendars
-      client = Signet::OAuth2::Client.new(client_options)
-      client.update!(session[:authorization])
+    client = Signet::OAuth2::Client.new(client_options)
+    client.update!(session[:authorization])
 
-      service = Google::Apis::CalendarV3::CalendarService.new
-      service.authorization = client
+    service = Google::Apis::CalendarV3::CalendarService.new
+    service.authorization = client
 
-      @calendar_list = service.list_calendar_lists
+    @calendar_list = service.list_calendar_lists
 
 
-    end
+  end
 
-    def new_calendar
-      calendar = Google::Apis::CalendarV3::Calendar.new(calendar_options)
-      result = client.insert_calendar(calendar)
-    end
+  def new_calendar
+    calendar = Google::Apis::CalendarV3::Calendar.new(calendar_options)
+    result = client.insert_calendar(calendar)
+  end
 
   # Privates Methods Initializer
   private
@@ -106,7 +103,7 @@ class ReserveItemsController < ApplicationController
     return @params
   end
 
-private
+  private
   # google api registration OAUTH private method
   def client_options
     {

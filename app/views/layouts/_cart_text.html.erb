@@ -2,11 +2,16 @@
   <!-- <span class="badge badge-dark"> -->
   <% if @default_date%>
   <span> </span>
-  <input type="text" style="cursor:pointer" class = "cart-text-datepicker nav-bar-text-cart nav-link " data-provide='datepicker' data-date-format="dd / M / yyyy" data-date-days-of-week-disabled="06" data-date-start-date = "<%=@current_date%>" placeholder="<%=@current_date %>" >
+
+  <%= text_field_tag :date_picker, name: "date_picker", params[:date], placeholder: @current_date, class: "cart-text-datepicker nav-bar-text-cart nav-link", :data => { provide: "datepicker", date_format:  "d / M / yyyy", date_days_of_week_disabled: "06", date_start_date: @current_date }%>
+
   <%else %>
   <% end %>
   <!-- </span> -->
 
+</li>
+<li>
+  <t1> <%= @selected_date.strftime("%d / %M") %> </t1>
 </li>
 
 <li class = "nav-item">
@@ -17,4 +22,6 @@
 <li class = "nav-item">
   <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link  nav-bar-text-cart", id: "logout-text"%>
 </li>
+
+
 <% end %>

@@ -45,6 +45,7 @@ function toggleSearchBar() {
 
 $(document).ready(function(){
   contractSideBar();
+  contractSearchBar();
 });
 
 $(window).resize(function() {
@@ -85,8 +86,6 @@ function contractSearchBar(){
   document.getElementById("float-but").style.display = "block";
   document.getElementById("bottom-search").style.width = "0px";
   document.getElementById("bg-search").style.display = "none";
-
-  // document.getElementById("bottom-search").focus();
   onSearch = false;
 }
 

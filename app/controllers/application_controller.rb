@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     @reserves_done = Array.new
     @current_date = Time.now.strftime("%d / %b / %Y")
     @default_date = true # 
+    @selected_date = Time.now # Without date formating
 
     # require/
 
@@ -20,6 +21,10 @@ class ApplicationController < ActionController::Base
       Reserve.new # Else, create new Reservation
     end
 
+  end
+
+  def change_date
+    @selected_date = params[:date_picker].nil? ? 1 : params[:date_picker]
   end
 
 end

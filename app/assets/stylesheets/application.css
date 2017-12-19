@@ -525,6 +525,7 @@ transition: 0.5s;
 /* Floating button */
 .float{
   background: red;
+  left: 92%;
   border-radius: 50px;
   position: fixed;
   width: 75px;
@@ -533,7 +534,7 @@ transition: 0.5s;
   background: #e74c3c;
   z-index: 3;
   text-align: center;
-  /* box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15); */
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
   -webkit-transition: 0.9s;
 }
 
