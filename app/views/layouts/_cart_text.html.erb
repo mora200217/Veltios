@@ -3,15 +3,12 @@
   <% if @default_date%>
   <span> </span>
 
-  <%= text_field_tag :date_picker, name: "date_picker", params[:date], placeholder: @current_date, class: "cart-text-datepicker nav-bar-text-cart nav-link", :data => { provide: "datepicker", date_format:  "d / M / yyyy", date_days_of_week_disabled: "06", date_start_date: @current_date }%>
+  <%= text_field_tag :datepicker, params[:date],  name: "date_picker", placeholder: @current_date, style: "cursor:pointer", class: "cart-text-datepicker nav-bar-text-cart nav-link", :data => { provide: "datepicker", date_format:  "dd / M / yyyy", date_days_of_week_disabled: "06", date_start_date: @current_date}%>
 
   <%else %>
   <% end %>
   <!-- </span> -->
 
-</li>
-<li>
-  <t1> <%= @selected_date.strftime("%d / %M") %> </t1>
 </li>
 
 <li class = "nav-item">
