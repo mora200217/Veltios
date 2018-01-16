@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
   <title> Veltios App </title>
   <%= favicon_link_tag 'favicon.ico'%>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -11,93 +11,94 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-  <body>
+<body>
 
-    <% if !current_user.nil?%>
-    <nav class = "navbar fixed-top bg-dark navbar-expand-lg navbar-dark nav-bar-main">
-      <button  onclick="toggleSideBar()"class="btn btn-outline-secondary" type="button" >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <!-- <a href="" class=" nav-bar-brand"> -->
-      <%= link_to "Veltios", root_path, class: "navbar-brand nav-bar-text" %>
-      <% if !current_user.nil? && current_user.admin %>
-      <%= link_to "Admin", rails_admin_path, id:"admin_text"%>
-      <%= link_to "Calendar ", redirect_path, id:"admin_text"%>
-      <% end %>
-
-      <!-- </a> -->
-      <div class="nav-bar-collapse-btns">
-        <button class="navbar-toggler nav-bar-cart-btn" type="button">
-          <span class="badge badge-dark"><%= link_to "#{current_reserve.reserve_items.size}" , cart_path, class: "icon-badge text-light", id: "cart-amount" %></span>
-          <%= open_iconic "icon", "basket"%>
-          <%= link_to "" , cart_path, class: "icon-badge text-light", id: "cart-amount" %>
-        </button>
-
-
-      </div>
-
-      <div class="collapse navbar-collapse nav-bar-collapse-container " id = "navbarSupportedContent">
-        <ul class = "navbar-nav nav-bar-collapse-ul collapse navbar-collapse" >
-          <!-- <div class=""> -->
-          <%= render 'layouts/cart_text'%>
-          <!-- </div> -->
-        </ul>
-
-      </div>
-    </nav>
-    <br><br><br>
-    <div id="side-bar" class="side-bar-container navbar-collapse " >
-      <a href="#">Sensors</a>
-      <a href="#">Tools</a>
-      <a href="#">Kits</a>
-      <a href="#">Compounds</a>
-      <a href="#">Elements</a>
-    </div>
-
-    <!-- floating button -->
-    <a class="float" id = "float-but" onclick="toggleSearchBar()">
-      <%= open_iconic "float-icon", "magnifying-glass"%>
-    </a>
-
-
-
+  <% if !current_user.nil?%>
+  <nav class = "navbar fixed-top bg-dark navbar-expand-lg navbar-dark nav-bar-main">
+    <button  onclick="toggleSideBar()"class="btn btn-outline-secondary" type="button" >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- <a href="" class=" nav-bar-brand"> -->
+    <%= link_to "Veltios", root_path, class: "navbar-brand nav-bar-text" %>
+    <% if !current_user.nil? && current_user.admin %>
+    <%= link_to "Admin", rails_admin_path, id:"admin_text"%>
+    <%= link_to "Calendar ", redirect_path, id:"admin_text"%>
     <% end %>
 
-    <div class="move" id = "sb-move-div" style="cursor:pointer">
-    <%= yield %>
+    <!-- </a> -->
+    <div class="nav-bar-collapse-btns">
+      <button class="navbar-toggler nav-bar-cart-btn" type="button">
+        <span class="badge badge-dark"><%= link_to "#{current_reserve.reserve_items.size}" , cart_path, class: "icon-badge text-light", id: "cart-amount" %></span>
+        <%= open_iconic "icon", "basket"%>
+        <%= link_to "" , cart_path, class: "icon-badge text-light", id: "cart-amount" %>
+      </button>
+
+
     </div>
 
+    <div class="collapse navbar-collapse nav-bar-collapse-container " id = "navbarSupportedContent">
+      <ul class = "navbar-nav nav-bar-collapse-ul collapse navbar-collapse" >
+        <!-- <div class=""> -->
+        <%= render 'layouts/cart_text'%>
+        <!-- </div> -->
+      </ul>
 
-<div class="footer-div footer">
+    </div>
+  </nav>
+  <br><br><br>
+  <div id="side-bar" class="side-bar-container navbar-collapse " >
+    <a href="#">Sensors</a>
+    <a href="#">Tools</a>
+    <a href="#">Kits</a>
+    <a href="#">Compounds</a>
+    <a href="#">Elements</a>
+  </div>
 
-      <div class="row footer-body">
-        <div class="col footer-text">
-          <h7 href="">Veltios Web App created by Andres Morales. Bogota, Colombia.</h7>
-        </div>
-        <div class="col footer-text">
-          <ul class = "col">
-            <h7 href="" class="col footer-logo">
-              <a href="https://github.com/mora200217/Veltios" target="_blank">
-                <%= image_tag("github_logo@0.5x.png", :alt => "rss feed", :class => "img-rounded footer-img") %>
-              </a>
-
-            </h7>
-            <h7 href="" class="col footer-logo">
-              <a href="https://www.facebook.com/colegionuevayorkoficial" target="_blank">
-                <%= image_tag("facebook_logo@0.5x.png", :alt => "rss feed", :class => "img-rounded footer-img") %>
-              </a>
-            </h7>
-            <h7 href="" class=" col footer-logo">
-              <a href="http://colegionuevayork.edu.co/" target="_blank">
-                <%= image_tag("cny_logo@0.5x.png", :alt => "rss feed", :class => "img-rounded footer-img") %>
-              </a>
-            </h7>
-          </ul>
-        </div>
-        </div>
+  <!-- floating button -->
+  <a class="float" id = "float-but" onclick="toggleSearchBar()">
+    <%= open_iconic "float-icon", "magnifying-glass"%>
+  </a>
 
 
-         <!-- Search Engine -->
+  <div class="footer-div footer">
+
+    <div class="row footer-body">
+      <div class="col footer-text">
+        <h7 href="">Veltios Web App created by Andres Morales. Bogota, Colombia.</h7>
+      </div>
+      <div class="col footer-text">
+        <ul class = "col">
+          <h7 href="" class="col footer-logo">
+            <a href="https://github.com/mora200217/Veltios" target="_blank">
+              <%= image_tag("github_logo@0.5x.png", :alt => "rss feed", :class => "img-rounded footer-img") %>
+            </a>
+
+          </h7>
+          <h7 href="" class="col footer-logo">
+            <a href="https://www.facebook.com/colegionuevayorkoficial" target="_blank">
+              <%= image_tag("facebook_logo@0.5x.png", :alt => "rss feed", :class => "img-rounded footer-img") %>
+            </a>
+          </h7>
+          <h7 href="" class=" col footer-logo">
+            <a href="http://colegionuevayork.edu.co/" target="_blank">
+              <%= image_tag("cny_logo@0.5x.png", :alt => "rss feed", :class => "img-rounded footer-img") %>
+            </a>
+          </h7>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <% end %>
+
+  <div class="move" id = "sb-move-div" style="cursor:pointer">
+    <%= yield %>
+  </div>
+
+
+
+
+         <!-- Search Bar-->
     <div class="bg-search" id = "bg-search">
 <form class="form-search" action="index.html" method="post">
   <input type="text" id = "input-search" name=""class = "search-bar" placeholder="Type Bro!" onfocus="expandBottom()">
