@@ -62,7 +62,9 @@
   <% end %>
   <div class="move" id = "sb-move-div" style="cursor:pointer">
     <%= yield %>
+    <% if !current_user.nil?%>
     <%= render 'layouts/footer'%>
+    <% end %>
   </div>
 
   <!-- Search Bar-->

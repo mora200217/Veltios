@@ -91,9 +91,10 @@ background-size: 100% 100%;
 .main-container-div{
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   margin: 0px;
   padding: 0px;
+
 }
 
 .devise-form{
@@ -375,12 +376,7 @@ transition: 0.5s;
 }
 
 /* Carts */
-.cart-list-container{
-  position: fixed;
-  height: 100%;
-  width: 88%;
-  right: 0px;
-}
+
 
 .cart-list-div{
   padding: 50px;
@@ -489,6 +485,7 @@ transition: 0.5s;
   background-color: #121416;
   text-align: center;
   color: #596268;
+
 }
 
 .navbar-fixed-bottom{
