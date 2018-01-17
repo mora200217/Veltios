@@ -60,17 +60,11 @@ left: 0px;
 }
 
 .elements-list-container{
+  min-height: calc(100vh - 70px);
   margin: auto;
-  float: left;
-  margin-left: 250px;
   transition: 0.5s;
   width: 77%;
-  float: left;
-  position: absolute;
-}
-
-.elements-offset{
-
+  position: relative;
 }
 
 
