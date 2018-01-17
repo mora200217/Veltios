@@ -91,9 +91,10 @@ background-size: 100% 100%;
 .main-container-div{
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   margin: 0px;
   padding: 0px;
+
 }
 
 .devise-form{
@@ -375,12 +376,7 @@ transition: 0.5s;
 }
 
 /* Carts */
-.cart-list-container{
-  position: fixed;
-  height: 100%;
-  width: 88%;
-  right: 0px;
-}
+
 
 .cart-list-div{
   padding: 50px;
@@ -475,37 +471,31 @@ transition: 0.5s;
   .left-container{
    position: absolute;
 
-  }
+ }
 }
 
 
 
- /* Footer */
- .footer-div{
-   /*position: absolute;*/
+/* Footer */
+.footer-div{
+  right: 0;
+  left: 0;
+  padding: 1rem;
+  height: 50px;
+  background-color: #121416;
+  text-align: center;
+  color: #596268;
 
-   position: absolute;
- right: 0;
- bottom: 0;
- left: 0;
-   right: 0;
-   bottom: -1200px;
-   left: 0;
-   padding: 1rem;
-   height: 200px;
-   background-color: #121416;
-   text-align: center;
-   color: #596268;
- }
+}
 
- .navbar-fixed-bottom{
-   bottom: 0px;
-   position: fixed;
- }
+.navbar-fixed-bottom{
+  bottom: 0px;
+  position: fixed;
+}
 
- .footer-text{
-   margin: auto;
-   top: 0px;
+.footer-text{
+  margin: auto;
+  top: 0px;
    bottom: 0px;
  }
 
