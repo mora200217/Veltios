@@ -38,9 +38,9 @@
 
     <div class="collapse navbar-collapse nav-bar-collapse-container " id = "navbarSupportedContent">
       <ul class = "navbar-nav nav-bar-collapse-ul collapse navbar-collapse" >
-        <!-- <div class=""> -->
+
         <%= render 'layouts/cart_text'%>
-        <!-- </div> -->
+
       </ul>
 
     </div>
@@ -59,59 +59,27 @@
     <%= open_iconic "float-icon", "magnifying-glass"%>
   </a>
 
-
-  <div class="footer-div footer">
-
-    <div class="row footer-body">
-      <div class="col footer-text">
-        <h7 href="">Veltios Web App created by Andres Morales. Bogota, Colombia.</h7>
-      </div>
-      <div class="col footer-text">
-        <ul class = "col">
-          <h7 href="" class="col footer-logo">
-            <a href="https://github.com/mora200217/Veltios" target="_blank">
-              <%= image_tag("github_logo@0.5x.png", :alt => "rss feed", :class => "img-rounded footer-img") %>
-            </a>
-
-          </h7>
-          <h7 href="" class="col footer-logo">
-            <a href="https://www.facebook.com/colegionuevayorkoficial" target="_blank">
-              <%= image_tag("facebook_logo@0.5x.png", :alt => "rss feed", :class => "img-rounded footer-img") %>
-            </a>
-          </h7>
-          <h7 href="" class=" col footer-logo">
-            <a href="http://colegionuevayork.edu.co/" target="_blank">
-              <%= image_tag("cny_logo@0.5x.png", :alt => "rss feed", :class => "img-rounded footer-img") %>
-            </a>
-          </h7>
-        </ul>
-      </div>
-    </div>
-  </div>
-
   <% end %>
-
   <div class="move" id = "sb-move-div" style="cursor:pointer">
     <%= yield %>
+    <%= render 'layouts/footer'%>
   </div>
 
+  <!-- Search Bar-->
+  <div class="bg-search" id = "bg-search">
+    <form class="form-search" action="index.html" method="post">
+      <input type="text" id = "input-search" name=""class = "search-bar" placeholder="Type Bro!" onfocus="expandBottom()">
+      <span class = "bottom-bg-search" id = "bottom-search"> </span>
+      <div class = "label-div">
+        <label class="label-search">Just keep searching or go out...you know...with esc</label>
+        <h1 class = "subtitle-search">Gandalf Would suggest </h1>
+        <p class = "description-search">The force is strong with this one, is you search with key words. Try to search like Oxygen Sensor, Movement Sensor, etc</p>
+      </div>
 
+    </form>
 
-
-         <!-- Search Bar-->
-    <div class="bg-search" id = "bg-search">
-<form class="form-search" action="index.html" method="post">
-  <input type="text" id = "input-search" name=""class = "search-bar" placeholder="Type Bro!" onfocus="expandBottom()">
-    <span class = "bottom-bg-search" id = "bottom-search"> </span>
-    <div class = "label-div">
-  <label class="label-search">Just keep searching or go out...you know...with esc</label>
-  <h1 class = "subtitle-search">Gandalf Would suggest </h1>
-  <p class = "description-search">The force is strong with this one, is you search with key words. Try to search like Oxygen Sensor, Movement Sensor, etc</p>
   </div>
 
-</form>
-
-    </div>
-  </body>
+</body>
 
 </html>

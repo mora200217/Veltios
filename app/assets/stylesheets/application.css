@@ -475,37 +475,30 @@ transition: 0.5s;
   .left-container{
    position: absolute;
 
-  }
+ }
 }
 
 
 
- /* Footer */
- .footer-div{
-   /*position: absolute;*/
+/* Footer */
+.footer-div{
+  right: 0;
+  left: 0;
+  padding: 1rem;
+  height: 50px;
+  background-color: #121416;
+  text-align: center;
+  color: #596268;
+}
 
-   position: absolute;
- right: 0;
- bottom: 0;
- left: 0;
-   right: 0;
-   bottom: -1200px;
-   left: 0;
-   padding: 1rem;
-   height: 200px;
-   background-color: #121416;
-   text-align: center;
-   color: #596268;
- }
+.navbar-fixed-bottom{
+  bottom: 0px;
+  position: fixed;
+}
 
- .navbar-fixed-bottom{
-   bottom: 0px;
-   position: fixed;
- }
-
- .footer-text{
-   margin: auto;
-   top: 0px;
+.footer-text{
+  margin: auto;
+  top: 0px;
    bottom: 0px;
  }
 
