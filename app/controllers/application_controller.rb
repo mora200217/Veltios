@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_reserve  # Helper Method created
   before_action :authenticate_user!
 
-
   # Current Reservation function
   def current_reserve
     # Public Variables Initial OVerall Declaration
@@ -12,7 +11,7 @@ class ApplicationController < ActionController::Base
     @current_date = Time.now.strftime("%d / %b / %Y")
     @default_date = true # 
     @selected_date = Time.now # Without date formating
-
+    @q = Element.ransack(params[:q])
     # require/
 
     if !session[:reserve_id].nil? # Check for Reservation session existance
@@ -25,6 +24,13 @@ class ApplicationController < ActionController::Base
 
   def change_date
     @selected_date = params[:date_picker].nil? ? 1 : params[:date_picker]
+  end
+
+  def search
+    @q = Element.ransack(params[:q])
+    @search_elements= @q.result(distinct: true)
+    @reserve_item = current_reserve.reserve_items.new # Access to current reserve items and insert onreree
+    render :template => "elements/index"
   end
 
 end

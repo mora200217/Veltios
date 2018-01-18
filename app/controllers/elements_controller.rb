@@ -5,4 +5,6 @@ class ElementsController < ApplicationController
     @reserve_item = current_reserve.reserve_items.new # Access to current reserve items and insert onreree
   end
 
+
+
 end
