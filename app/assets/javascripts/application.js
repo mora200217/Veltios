@@ -77,7 +77,7 @@ function expandSearchBar(){
   document.getElementById("bg-search").style.display = "block";
   document.getElementById("float-but").style.display = "none";
   document.getElementById("bg-search").style.opacity = "0.9";
-  document.getElementById("input-search").focus();
+  document.getElementById("q_name_cont").focus();
   onSearch = true;
 }
 

@@ -1,8 +1,10 @@
 
 
+<!-- Search engine modification  -->
+  <% @iterable_elements = @search_elements.nil? ? @elements : @search_elements %>
 
+  <% @iterable_elements.each do |element| %>
 
-  <% @elements.each do |element| %>
     <div class="hideMobile">
       <div class="element-section-main-div">
         <div class="row fluid-container">

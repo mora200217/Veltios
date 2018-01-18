@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   post "send_mail" => "reserve_items#send_mail"
 
+  get "search" => "application#search"
+
   root "elements#index"
 
 # Routes for google api authorization methods
