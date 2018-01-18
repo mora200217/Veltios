@@ -2,7 +2,7 @@
 
 <!-- Search engine modification  -->
   <% @iterable_elements = @search_elements.nil? ? @elements : @search_elements %>
-
+  <% if @iterable_elements.size > 0%>
   <% @iterable_elements.each do |element| %>
 
     <div class="hideMobile">
@@ -66,3 +66,10 @@
       </div>
     </div>
   <% end %>
+
+  <%else %>
+  <div class="cart-list-container">
+    <p class="text-center" style = "padding-top:20px; margin: auto;">
+      Theres no info here Agent Hunt, keep on your <%= link_to "mission", root_path %> an try to search other stuff
+    </p>
+    <% end %>
