@@ -104,7 +104,7 @@ $(document).keyup(function(e) {
 });
 
 function changeValue(){
-alert("DONE");
+// alert("DONE");
 document.getElementById("date-change-form").submit();
 
 }

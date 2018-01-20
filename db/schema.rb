@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170909175409) do
+ActiveRecord::Schema.define(version: 20180120172136) do
+
+  create_table "difference_reservations", force: :cascade do |t|
+    t.integer "element_id"
+    t.integer "reservation_block"
+    t.date "reservation_date"
+    t.integer "reservation_amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "elements", force: :cascade do |t|
     t.string "name"
@@ -27,6 +36,15 @@ ActiveRecord::Schema.define(version: 20170909175409) do
     t.string "preview_content_type"
     t.integer "preview_file_size"
     t.datetime "preview_updated_at"
+  end
+
+  create_table "reservation_differences", force: :cascade do |t|
+    t.integer "element_id"
+    t.integer "reservation_block"
+    t.date "reservation_date"
+    t.integer "reservation_amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reserve_items", force: :cascade do |t|

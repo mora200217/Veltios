@@ -12,6 +12,7 @@ class ReserveItemsController < ApplicationController
       @element = Element.find(@reserve_item[:element_id])
       @initial_element_amount = @element.amount.to_i # Declare initial amount value of the element
       @element.update_attribute(:amount, @initial_element_amount - @reserve_item[:amount].to_i)
+      ReservationDifference.create(element_id: @element.id, reservation_amount: @reserve_item[:amount].to_i, reservation_date: $selected_date.to_date)
       # else
       # @reserve_item = @reserve.reserve_items.where(reserve_items_params[:element_id])
       # # @reserve_item.first.update_attributes(reserve_items_params)
@@ -40,7 +41,7 @@ class ReserveItemsController < ApplicationController
     @element.update_attribute(:amount, @current_amount + @reserve_item[:amount].to_i)
     @reserve_item.destroy # Destroy given item
     @reserve_items = @reserve.reserve_items # Save to current reservation items
-    redirect_to cart
+  
 
   end
 
