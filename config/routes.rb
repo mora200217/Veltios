@@ -11,7 +11,15 @@ Rails.application.routes.draw do
 
   post "send_mail" => "reserve_items#send_mail"
 
+
+
+  get  "reservation_date" => "elements#update"
   get "search" => "application#search"
+
+
+  post "/update_reservation" => "elements#update"
+
+
 
   root "elements#index"
 

@@ -1,9 +1,13 @@
 <li class = "nav-item">
   <!-- <span class="badge badge-dark"> -->
-  <% if @default_date%>
+  <% if $default_date%>
   <span> </span>
+  <%= form_tag reservation_date_path, method: :get, action: "update", id: "date-change-form" do %>
+  <%= text_field_tag :datepicker, params[:date], onChange: "changeValue()", name: "date_picker", placeholder: $current_date , style: "cursor:pointer", class: "cart-text-datepicker nav-bar-text-cart nav-link", :data => { provide: "datepicker", date_format:  "dd / M / yyyy", date_days_of_week_disabled: "06", date_start_date: $current_date }%>
 
-  <%= text_field_tag :datepicker, params[:date],  name: "date_picker", placeholder: @current_date, style: "cursor:pointer", class: "cart-text-datepicker nav-bar-text-cart nav-link", :data => { provide: "datepicker", date_format:  "dd / M / yyyy", date_days_of_week_disabled: "06", date_start_date: @current_date}%>
+
+
+<% end %>
 
   <%else %>
   <% end %>
@@ -11,6 +15,10 @@
 
 </li>
 
+
+<li class = "nav-item">
+      <%= $selected_date.to_date %>
+ </li>
 <li class = "nav-item">
   <%= link_to "#{current_reserve.reserve_items.size} Elements to reserve" , cart_path, class: "nav-link nav-bar-text-cart", id: "cart-amount" %>
 

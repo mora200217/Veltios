@@ -102,3 +102,9 @@ $('.datepicker').datepicker({
 $(document).keyup(function(e) {
   if (e.keyCode == KEYCODE_ESC) contractSearchBar();
 });
+
+function changeValue(){
+alert("DONE");
+document.getElementById("date-change-form").submit();
+
+}

@@ -6,12 +6,12 @@ class ApplicationController < ActionController::Base
   # Current Reservation function
   def current_reserve
     # Public Variables Initial OVerall Declaration
-    @elements = Element.all
+    @@elements = Element.all
     @reserves_done = Array.new
-    @current_date = Time.now.strftime("%d / %b / %Y")
-    @default_date = true # 
-    @selected_date = Time.now # Without date formating
-    @q = Element.ransack(params[:q])
+    $current_date  = Time.now.strftime("%d / %b / %Y")
+    $default_date= true # 
+    $selected_date= Time.now # Without date formating
+    $q= Element.ransack(params[:q])
     # require/
 
     if !session[:reserve_id].nil? # Check for Reservation session existance
@@ -23,12 +23,14 @@ class ApplicationController < ActionController::Base
   end
 
   def change_date
-    @selected_date = params[:date_picker].nil? ? 1 : params[:date_picker]
+    $selected_date = params[:date_picker].nil? ? 1 : params[:date_picker]
+    $dafault_date = false
+    redirect_to root_path
   end
 
   def search
-    @q = Element.ransack(params[:q])
-    @search_elements= @q.result(distinct: true)
+    # $q= Element.ransack(params[:q])
+    @search_elements= $q.result(distinct: true)
     @reserve_item = current_reserve.reserve_items.new # Access to current reserve items and insert onreree
     render :template => "elements/index"
   end

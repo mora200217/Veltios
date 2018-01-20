@@ -632,3 +632,9 @@ width: 50%;
 font-family: "Courier";
 font-weight: lighter;
 }
+
+
+/* Extension classes (?)  */
+.hide-button{
+  display: none;
+}
