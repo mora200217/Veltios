@@ -10,7 +10,6 @@ class ApplicationController < ActionController::Base
     @reserves_done = Array.new
     $current_date  = Time.now.strftime("%d / %b / %Y")
     $default_date= true # 
-    $selected_date= Time.now # Without date formating
     $q= Element.ransack(params[:q])
     # require/
 
@@ -22,11 +21,7 @@ class ApplicationController < ActionController::Base
 
   end
 
-  def change_date
-    $selected_date = params[:date_picker].nil? ? 1 : params[:date_picker]
-    $dafault_date = false
-    redirect_to root_path
-  end
+
 
   def search
     # $q= Element.ransack(params[:q])
