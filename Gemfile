@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.3'
 gem 'rails_admin', '~> 1.2'
 
-gem 'paperclip', '~> 4.3', '>= 4.3.6'
+gem 'paperclip', '~> 5.1'
 gem 'aws-sdk', '~> 2.3'
 gem 'open-iconic-rails', '~> 0.0.1'
 
@@ -53,7 +53,7 @@ gem 'ransack', '~> 1.8', '>= 1.8.4'
 group :production do
   gem 'devise', '~> 4.3'
   gem 'pg', '~> 0.21.0'
-  gem 'paperclip', '~> 4.3', '>= 4.3.6'
+  gem 'paperclip', '~> 5.1'
 end
 
 group :development, :test do
