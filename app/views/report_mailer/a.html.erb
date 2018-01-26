@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <style>
+    /* css inline block */
+      body{
+        background: blue;
+      };
+    </style>
+  </head>
+  <body>
+    <t1>Saludos <%= @current_user.name.to_s %>,</t1>
+    <p>
+      Has reservado exitosamente los siguientes elementos<br>
+
+
+    <% @reserve_items.each do |current_element| %>
+    <% @element = current_element.element%>
+
+    <li><span><%= current_element.amount.to_s + " - " %></span><span><%= @element.name%></span></li>
+
+    <% end %>
+  <p>
+    La siguiente practica experimental de laboratorio tendras a tus disposicion dichos elementos.
+    </p>
+    <p>Gracias por usar Veltios App
+    <br>
+    Atentamente Andrés Morales </p>
+  </body>
+</html>

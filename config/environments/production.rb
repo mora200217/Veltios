@@ -37,7 +37,7 @@ Rails.application.configure do
       # :host => "veltios.herokuapp.com"
       :domain => "gmail.com",
       :user_name => "veltiosapp",
-      :password => "VeltiosApp200217",
+      :password => "Veltios200217",
       :authentication => "plain",
       :enable_starttls_auto => true
   }

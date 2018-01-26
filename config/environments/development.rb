@@ -33,7 +33,7 @@ Rails.application.configure do
       :port => 25,
       :domain => "gmail.com",
       :user_name => "veltiosapp",
-      :password => "VeltiosApp200217",
+      :password => "Veltios200217",
       :authentication => "plain",
       :enable_starttls_auto => true
   }
