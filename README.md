@@ -1,24 +1,11 @@
-# README
+# Veltios App - 
+[![Build Status](https://travis-ci.com/mora200217/Veltios.svg?token=s9PzxSzmiQKwMpyDps68&branch=master)](https://travis-ci.com/mora200217/Veltios)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Specifications 
+Veltios app is run on Ruby, with rails frame work.Coffescript and scss for precompile assest docs. 
+* Ruby **Version**: 2.2 (rvm)
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Thanks, Andres Morales
