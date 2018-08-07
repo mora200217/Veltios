@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   post "/update_reservation" => "elements#update"
 
-
+ patch "/reserve_items" => "reserve_items#update"
 
   root "elements#index"
 

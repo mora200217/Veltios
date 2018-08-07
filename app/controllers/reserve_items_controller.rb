@@ -5,31 +5,31 @@ class ReserveItemsController < ApplicationController
   # Created Method
   def create
     @reserve = current_reserve # Get current reserve grouo
-    if !@reserve.reserve_items.where(element_id: reserve_items_params[:element_id]).exists?(conditions =  :none)
+   @elements = Element.all
       @reserve_item = @reserve.reserve_items.new(reserve_items_params) # Create a new item, based in private params function
       @reserve.save
       session[:reserve_id] = @reserve.id # Create a session with reservation id
       @element = Element.find(@reserve_item[:element_id])
       @initial_element_amount = @element.amount.to_i # Declare initial amount value of the element
       @element.update_attribute(:amount, @initial_element_amount - @reserve_item[:amount].to_i)
-      # ReservationDifference.create(element_id: @element.id, reservation_amount: @reserve_item[:amount].to_i, reservation_date: $selected_date.to_date)
-      # else
-      # @reserve_item = @reserve.reserve_items.where(reserve_items_params[:element_id])
-      # # @reserve_item.first.update_attributes(reserve_items_params)
-      # @reserve_items = @reserve.reserve_items
-      redirect_to root_path
 
-    end
-
+    render 'elements/index'
   end
 
 
   # Update Method
   def update
-    @reserve = current_reserve # Acces to current reserve group
-    @reserve_item = @reserve.reserve_items.find(params[:id]) # Find a given item within current reservation by id
-    @reserve_item.update_attributes(reserve_items_params) # Update given item, based in private function
+        @reserve = current_reserve # Acces to current reserve groupç
+    @reserve_item = @reserve.reserve_items.first # Find a given item within current reservation by id
+    @reserve_item.update_attribute(:amount, @reserve_item[:amount] + 1) # Update given item, based in private function
     @reserve_items = @reserve.reserve_items# Get current reservation items
+
+    @element = Element.find(@reserve_item[:element_id])
+    @initial_element_amount = @element.amount.to_i # Declare initial amount value of the element
+    @element.update_attribute(:amount, @initial_element_amount - @reserve_item[:amount].to_i)
+
+    @elements = Element.all
+      render 'elements/index'
   end
 
   # Destroy Method
