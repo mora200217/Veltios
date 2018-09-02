@@ -103,6 +103,11 @@ $(document).keyup(function(e) {
   if (e.keyCode == KEYCODE_ESC) contractSearchBar();
 });
 
+
+function initDate(){
+alert("adfzxgcn");
+
+}
 function changeValue(){
 // alert("DONE");
 document.getElementById("date-change-form").submit();
