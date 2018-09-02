@@ -10,7 +10,7 @@ class ReserveItemsController < ApplicationController
     if  @reserve.reserve_items.find_by(element_id: reserve_items_params[:element_id])
       update
     else
-      @reserve_item = @reserve.reserve_items.new(reserve_items_params) # Create a new item, based in private params function
+      @reserve_item = @reserve.reserve_items.create!(reserve_items_params) # Create a new item, based in private params function
       @reserve.save
       session[:reserve_id] = @reserve.id # Create a session with reservation id
       @element = Element.find(@reserve_item[:element_id])
