@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     if !session[:reserve_id].nil? # Check for Reservation session existance
       Reserve.find(session[:reserve_id])  # Find reservation session
     else
-      Reserve.new# Else, create new Reservation
+      Reserve.create!# Else, create new Reservation
     end
 
   end
@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   def search
     # $q= Element.ransack(params[:q])
     @search_elements= $q.result(distinct: true)
-    @reserve_item = current_reserve.reserve_items.new # Access to current reserve items and insert onreree
+    @reserve_item = current_reserve.reserve_items.create! # Access to current reserve items and insert onreree
     render :template => "elements/index"
   end
 
