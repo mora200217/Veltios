@@ -2,10 +2,8 @@
 
 one:
   element: one
-  order: one
   amount: 1
 
 two:
   element: two
-  order: two
   amount: 1

@@ -9,3 +9,6 @@ Rails.application.initialize!
 
 # Mailer Action Method
 # config.action_mailer.delivery_method = :test / :smtp | :sedmail | :file
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.irregular 'orders', 'order'
+end
