@@ -4,8 +4,12 @@ class ReserveItemsController < ApplicationController
 
   # Created Method
   def create
+
     @reserve = current_reserve # Get current reserve grouo
-   @elements = Element.all
+    @elements = Element.all
+    if  @reserve.reserve_items.find_by(element_id: reserve_items_params[:element_id])
+      update
+    else
       @reserve_item = @reserve.reserve_items.new(reserve_items_params) # Create a new item, based in private params function
       @reserve.save
       session[:reserve_id] = @reserve.id # Create a session with reservation id
@@ -15,12 +19,13 @@ class ReserveItemsController < ApplicationController
 
     render 'elements/index'
   end
+  end
 
 
   # Update Method
-  def update
-        @reserve = current_reserve # Acces to current reserve groupç
-    @reserve_item = @reserve.reserve_items.first # Find a given item within current reservation by id
+def update
+    @reserve = current_reserve # Acces to current reserve groupç
+    @reserve_item = @reserve.reserve_items.find_by(element_id: reserve_items_params[:element_id])# Find a given item within current reservation by id
     @reserve_item.update_attribute(:amount, @reserve_item[:amount] + 1) # Update given item, based in private function
     @reserve_items = @reserve.reserve_items# Get current reservation items
 
@@ -44,6 +49,19 @@ class ReserveItemsController < ApplicationController
 
 
   end
+
+
+  def action_definer
+    @elements = Element.all
+    @reserve = current_reserve
+    if @reserve.reserve_items.find_by(element_id: reserve_items_params[:element_id])
+      update
+    else
+      create
+    end
+  end
+
+
 
   # Send Mail method
   def send_mail

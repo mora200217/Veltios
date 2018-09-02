@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     if !session[:reserve_id].nil? # Check for Reservation session existance
       Reserve.find(session[:reserve_id])  # Find reservation session
     else
-      Reserve.new # Else, create new Reservation
+      Reserve.new# Else, create new Reservation
     end
 
   end
