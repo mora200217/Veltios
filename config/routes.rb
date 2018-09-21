@@ -18,13 +18,14 @@ Rails.application.routes.draw do
   get  "reservation_date" => "elements#update"
   get "search" => "application#search"
 
+  # get "/reserve_date" => "datechooser#select"
 
   post "/update_reservation" => "elements#update"
 
   patch "/reserve_items" => "reserve_items#action_definer"
 
 
-  root "elements#index"
+  root  "elements#index"
 
 # Routes for google api authorization methods
   get '/redirect', to: 'reserve_items#redirect', as: 'redirect'

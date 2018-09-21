@@ -15,7 +15,8 @@
 // = require_tree .
 // = require jquery
 // = require bootstrap-datepicker
-/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+
+
 var expanded = false;
 var onSearch = false;
 
@@ -73,7 +74,7 @@ function contractSideBar(){
 }
 
 function expandSearchBar(){
-  document.getElementById("sb-move-div").style.transform =  "scale3d(0.7,0.7,1)";
+  // document.getElementById("sb-move-div").style.transform =  "scale3d(0.7,0.7,1)";
   document.getElementById("bg-search").style.display = "block";
   document.getElementById("float-but").style.display = "none";
   document.getElementById("bg-search").style.opacity = "0.9";
@@ -110,6 +111,27 @@ alert("adfzxgcn");
 }
 function changeValue(){
 // alert("DONE");
-document.getElementById("date-change-form").submit();
+var form = document.getElementById("date-change-form");
+if(confirm('Hey McFly! Changing the date, will delete unsent reserve. Want to proceed?')){
+form.submit();
+}else{
+  location.reload();
+}
 
+
+}
+
+// window.onload = function () {
+// document.getElementById("date-change-form").submit();
+//  }
+
+// Select day calendar function - change the url params
+
+function selectDayCalendar(clicked_id){
+
+var object = document.getElementById(clicked_id)
+object.setAttribute("class", "selected-day");
+var url = window.location.hostname;
+var final_url =  "/datechooser/select?start_date=" + clicked_id;
+window.location.replace(final_url);
 }

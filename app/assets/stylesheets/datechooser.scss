@@ -1,3 +1,133 @@
 // Place all the styles related to the Datechooser controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// *= require simple_calendar
+
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Ramabhadra|Timmana|Pattaya|Fugaz+One|Contrail+One');
+
+*{
+  padding: 0px;
+  margin: 0px;
+color:   #343a40
+}
+
+img {
+  position: absolute;
+  top:0;
+  bottom:0;
+  left: 0px;
+  right: 0px;
+  margin:auto;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+
+
+li{
+  text-decoration: none;
+  list-style-type: none;
+}
+
+
+.simple-calendar{
+margin: 50px;
+display: block;
+margin: auto;
+top: 200px;
+}
+
+.simple-calendar th{
+  border: none;
+}
+
+.simple-calendar tr{
+  border: none;
+}
+
+.calendar-heading{
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  // background-color: red;
+
+}
+
+.calendar-div{
+
+display: block;
+margin: auto;
+margin-top: 20%;
+height: 100%;
+padding: auto;
+// background: red;
+position: relative;
+}
+
+.tdiv{
+border: none;
+
+}
+
+th, td {
+    border: none;
+}
+.data-day{
+  // background: red;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.title-day{
+  width: 100%;
+  padding-top: 24%;
+  font-style: bold;
+
+}
+
+.days{
+  border: none;
+  margin: none;
+    color: white;
+}
+
+.day:hover{
+  background: #fad390;
+  cursor: pointer; 
+}
+
+
+
+
+.days-div{
+  color: white;
+  background:rgb(231, 76, 60);
+  color: white;
+  color: white;
+  border-style: none;
+}
+.title-text{
+  font-size: 190px;
+  font-family: 'Fugaz One';
+}
+
+.subtitle-text{
+  font-size: 30px;
+  text-align: center;
+}
+
+.subtitle-day{
+  margin-top: -30px;
+    display: block;
+}
+
+.calendar-title{
+
+
+}

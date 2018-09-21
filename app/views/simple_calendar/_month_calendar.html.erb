@@ -1,0 +1,46 @@
+<div class="simple-calendar">
+  <div class="row ">
+    <div class="col-4 color-left">
+      <div class="row data-day title-day">
+      <h1 class="text-center title-text">15</h1>
+      </div>
+      <div class="row data-day subtitle-day">
+      <t5 class= "text-center subtitle-text">Monday</t5>
+      </div>
+    </div>
+    <div class="col-8">
+    <table class=" tdiv" cellspacing="0" cellpadding="0">
+      <thead class = "days-div">
+        <tr>
+          <% date_range.slice(0, 7).each do |day| %>
+            <th class = "days"><%= t('date.abbr_day_names')[day.wday] %></th>
+          <% end %>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% date_range.each_slice(7) do |week| %>
+          <tr>
+            <% week.each do |day| %>
+              <%= content_tag :td, class: calendar.td_classes_for(day), id: "cell-" + day.to_s, onclick: "selectDayCalendar(this.id)"  do %>
+                <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(block) %>
+                  <% capture_haml(day, sorted_events.fetch(day, []), &block) %>
+                <% else %>
+                  <% block.call day, sorted_events.fetch(day, []) %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="calendar-heading">
+    <%= link_to t('simple_calendar.previous', default: '<'), calendar.url_for_previous_view %>
+    <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
+    <%= link_to t('simple_calendar.next', default: '>'), calendar.url_for_next_view %>
+  </div>
+
+</div>

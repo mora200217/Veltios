@@ -3,7 +3,7 @@
   <% if $default_date%>
   <span> </span>
   <%= form_tag reservation_date_path, method: :get, action: "update", id: "date-change-form" do %>
-  <%= text_field_tag :datepicker, params[:date], onChange: "changeValue()", name: "date_picker", placeholder: $selected_date , disabled: "True", style: "cursor:pointer", class: "cart-text-datepicker nav-bar-text-cart nav-link", :data => { provide: "datepicker", date_format:  "dd / M / yyyy", date_days_of_week_disabled: "06", date_start_date: $current_date }%>
+    <%= text_field_tag :datepicker, params[:date], onChange: "changeValue()", name: "date_picker", placeholder: $selected_date , readonly: true, style: "cursor:pointer", class: "cart-text-datepicker nav-bar-text-cart nav-link", :data => { provide: "datepicker", date_format:  "dd / M / yyyy", date_days_of_week_disabled: "06", date_start_date: $current_date }%>
 
 
 

@@ -39,6 +39,7 @@ gem 'bootstrap-datepicker-rails', '~> 1.7', '>= 1.7.1.1'
 
 gem 'ransack', '~> 1.8', '>= 1.8.4'
 
+gem "simple_calendar", "~> 2.0"
 # gem 'rails_admin_example_theme', :git => 'git://github.com/bbenezech/rails_admin_example_theme.git'
 
 

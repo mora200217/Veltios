@@ -13,6 +13,7 @@
 *= require_tree .
 *= require_self
 *= require bootstrap-datepicker3
+*= require simple_calendar
 */
 
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One|Ramabhadra|Timmana|Pattaya|Fugaz+One|Contrail+One');
@@ -638,4 +639,14 @@ font-weight: lighter;
 /* Extension classes (?)  */
 .hide-button{
   display: none;
+}
+
+
+.selected-day{
+  background: #FFFFC0;
+}
+
+
+.today {
+  background: #FFFFC0
 }
