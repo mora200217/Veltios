@@ -15,8 +15,11 @@ class ReserveItemsController < ApplicationController
       session[:reserve_id] = @reserve.id # Create a session with reservation id
       @element = Element.find(@reserve_item[:element_id])
       @initial_element_amount = @element.amount.to_i # Declare initial amount value of the element
-      @element.update_attribute(:amount, @initial_element_amount - @reserve_item[:amount].to_i)
-      render 'elements/index'
+      @element.update_attribute(:amount, @initial_element_amount - reserve_items_params[:amount].to_i)
+      # render 'elements/index'
+      respond_to do |format|
+        format.js
+      end
 
   end
   end
@@ -31,10 +34,13 @@ def update
 
     @element = Element.find(@reserve_item[:element_id])
     @initial_element_amount = @element.amount.to_i # Declare initial amount value of the element
-    @element.update_attribute(:amount, @initial_element_amount - @reserve_item[:amount].to_i)
+    @element.update_attribute(:amount, @initial_element_amount - reserve_items_params[:amount].to_i)
 
     @elements = Element.all
-      render 'elements/index'
+
+      respond_to do |format|
+        format.js
+      end
   end
 
   # Destroy Method
@@ -46,7 +52,9 @@ def update
     @element.update_attribute(:amount, @current_amount + @reserve_item[:amount].to_i)
     @reserve_item.destroy # Destroy given item
     @reserve_items = @reserve.reserve_items # Save to current reservation items
-
+    respond_to do |format|
+      format.js
+    end
 
   end
 

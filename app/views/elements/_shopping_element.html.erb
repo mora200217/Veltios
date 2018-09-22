@@ -18,14 +18,15 @@
               <h4 class="element-section-details">Uncertainty: <span style="color: green"> <%= element.uncertainty.to_s + " " + element.units.to_s.downcase%></span></h4>
             </div>
             <h6 class = "element-section-description"><%= element.desciption %></small></h6>
-            <%= form_for @reserve_item, :url => {:controller => :reserve_items, :action => :create}, id: "element_form" do |f| %>
+            <%= form_for @reserve_item, :url => {:controller => :reserve_items, :action => :create}, remote: true do |f| %>
 
             <div class="element-section-btn-group">
               <div class="btn-group-element input-group">
                 <%= f.number_field :amount, value: 1, class: "form-control int-input", min: 1, max: element.amount %>
                 <div class="input-group-btn btn-group">
                   <%= f.hidden_field :element_id, value: element.id %>
-                  <%= f.submit "Reserve", class: "btn btn-danger"%>
+                  <%= f.hidden_field :selected_amount, value: :amount %>
+                    <%= submit_tag "Add to Cart", :name => nil, :class => "btn btn-danger"%>
                 </div>
               </div>
             </div>

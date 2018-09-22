@@ -148,9 +148,23 @@ $(function () {
 })
 
 
-$('#element_form').submit(function(e){
+$('.new_reserve_item').submit(function(e){
     e.preventDefault();
-    // alert("we");
+    alert("we");
+    // $.ajax({
+    //     url:'/elements/create',
+    //     type:'post',
+    //     data:$('#element_form').serialize(),
+    //     success:function(){
+    //       alert("Saved!");
+    //       Console.log("da");
+    //     }
+    // });
+});
+
+$('.edit_reserve_item').submit(function(e){
+    e.preventDefault();
+    alert("we");
     // $.ajax({
     //     url:'/elements/create',
     //     type:'post',
