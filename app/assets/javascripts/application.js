@@ -113,7 +113,13 @@ function changeValue(){
 // alert("DONE");
 var form = document.getElementById("date-change-form");
 if(confirm('Hey McFly! Changing the date, will delete unsent reserve. Want to proceed?')){
+
+$.ajax({
+  type: "delete",
+  url: "/reserve_actions/destroy_all"});
+
 form.submit();
+
 }else{
   location.reload();
 }
@@ -121,17 +127,9 @@ form.submit();
 
 }
 
-// window.onload = function () {
-// document.getElementById("date-change-form").submit();
-//  }
+function updateUrlDate(){
+  var form = document.getElementById("date-change-form");
 
-// Select day calendar function - change the url params
+  form.submit();
 
-function selectDayCalendar(clicked_id){
-
-var object = document.getElementById(clicked_id)
-object.setAttribute("class", "selected-day");
-var url = window.location.hostname;
-var final_url =  "/datechooser/select?start_date=" + clicked_id;
-window.location.replace(final_url);
 }

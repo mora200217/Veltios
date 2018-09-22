@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   resource :cart, only: [:show]
   resources :reserve_items, only: [:create, :update, :destroy]
 
+  resources :reserve_actions do
+    delete :destroy_all, on: :collection
+    # or you may prefer to call this route on: :member
+  end
+
   post "send_mail" => "reserve_items#send_mail"
 
 

@@ -51,6 +51,7 @@ def update
   end
 
 
+
   def action_definer
     @elements = Element.all
     @reserve = current_reserve
@@ -59,6 +60,7 @@ def update
     else
       create
     end
+
   end
 
 
