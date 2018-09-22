@@ -112,24 +112,52 @@ alert("adfzxgcn");
 function changeValue(){
 // alert("DONE");
 var form = document.getElementById("date-change-form");
-if(confirm('Hey McFly! Changing the date, will delete unsent reserve. Want to proceed?')){
+$("#myModal").modal("toggle");
 
-$.ajax({
-  type: "delete",
-  url: "/reserve_actions/destroy_all"});
-
-form.submit();
-
-}else{
-  location.reload();
-}
 
 
 }
 
+
+function submitForm(){
+  var form = document.getElementById("date-change-form");
+
+  $.ajax({
+    type: "delete",
+    url: "/reserve_actions/destroy_all"});
+
+  form.submit();
+}
 function updateUrlDate(){
   var form = document.getElementById("date-change-form");
 
   form.submit();
 
 }
+
+
+
+function lineExpansion(id){
+  var line = document.getElementById("line-below-"+String(id));
+  line.style.width = "80%";
+}
+
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+
+$('#element_form').submit(function(e){
+    e.preventDefault();
+    // alert("we");
+    // $.ajax({
+    //     url:'/elements/create',
+    //     type:'post',
+    //     data:$('#element_form').serialize(),
+    //     success:function(){
+    //       alert("Saved!");
+    //       Console.log("da");
+    //     }
+    // });
+});

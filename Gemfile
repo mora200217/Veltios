@@ -52,9 +52,9 @@ gem "simple_calendar", "~> 2.0"
 # gem 'capistrano-rails', group: :development
 
 group :production, :test do
-  gem 'devise', '~> 4.3'
+  # gem 'devise', '~> 4.3'
   gem 'pg', '~> 0.21.0'
-  gem 'paperclip', '~> 5.1'
+  # gem 'paperclip', '~> 5.1< '
 end
 
 group :development, :test do

@@ -16,8 +16,8 @@ class ReserveItemsController < ApplicationController
       @element = Element.find(@reserve_item[:element_id])
       @initial_element_amount = @element.amount.to_i # Declare initial amount value of the element
       @element.update_attribute(:amount, @initial_element_amount - @reserve_item[:amount].to_i)
+      render 'elements/index'
 
-    render 'elements/index'
   end
   end
 
