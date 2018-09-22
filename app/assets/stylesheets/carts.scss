@@ -1,3 +1,122 @@
 // Place all the styles related to the Carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import url('https://fonts.googleapis.com/css?family=Pattaya|Francois');
+
+.cart-section-title{
+  font-family: 'Pattaya', sans-serif;
+  font-size: 40px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.cart-section-subtitle{
+
+}
+
+
+// cart List Section
+.cart-section-main-div{
+    padding: 40px;
+    padding-bottom: 0px;
+    padding-top: 10px;
+  // background: blue;
+  // overflow-y: scroll;
+
+}
+.cart-list-container{
+  min-height: calc(100vh - 70px);
+  margin: auto;
+  transition: 0.5s;
+  width: 77%;
+  position: relative;
+}
+
+.cart-section-info{
+  // background: red;
+  width: 60%;
+  right: 10px;
+  margin: 20px;
+  text-align: right;
+  padding-bottom: 0px;
+  top: 0px;
+  padding-right: 5%;
+}
+.cart-section-img-container{
+  display: block;
+  // background: green;
+  width: 270px;
+  height: 270px;
+  margin: auto;
+    position: relative;
+}
+
+.cart-section-img{
+  display: inline-block;
+// background: red;
+border-style: none;
+  position: absolute;
+  margin: auto;
+  top: 0px;
+  bottom: 0px;
+  padding: 0px;
+  right: 0px;
+  left: 0px;
+}
+
+
+.cart-section-details{
+  font-size: 15px;
+  display: inline-block;
+  color: #2c3e50;
+}
+
+.cart-section-info-title{
+  font-size: 42px;
+  margin-bottom: 0px;
+  font-family: 'Francois One', sans-serif;
+}
+
+.cart-section-description{
+  font-weight: lighter;
+  right: 0px;
+  margin-right: 10px;
+  padding-right: 0px;
+  text-align: right;
+}
+
+.cart-section-btn-group{
+  width: 35%;
+  float: right;
+  margin-top: 20px;
+}
+
+
+// Utiliites
+.page-header{
+  width: 40%;
+  margin: auto;
+  padding-bottom: 0px;
+}
+
+// Reserve Button
+.cart-reserve-btn-container{
+position: relative;
+margin: auto;
+width: 100%;
+height: 200px;
+// background: red;
+
+}
+
+.cart-reserve-btn{
+  position: absolute;
+  display: block;
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+  right: 0px;
+  left: 0px;
+}
