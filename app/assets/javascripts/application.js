@@ -47,6 +47,12 @@ function toggleSearchBar() {
 $(document).ready(function(){
   contractSideBar();
   contractSearchBar();
+  $('.datepicker').datepicker();
+  $('.datepicker').datepicker({
+    format: 'mm/dd/yyyy',
+    startDate: '-3d'
+  });
+
 });
 
 $(window).resize(function() {
@@ -94,11 +100,6 @@ function expandBottom(){
     document.getElementById("bottom-search").style.width = "100%";
 }
 
-$('.datepicker').datepicker();
-$('.datepicker').datepicker({
-  format: 'mm/dd/yyyy',
-  startDate: '-3d'
-});
 
 $(document).keyup(function(e) {
   if (e.keyCode == KEYCODE_ESC) contractSearchBar();

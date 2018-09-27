@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180120172136) do
+ActiveRecord::Schema.define(version: 20180927164000) do
 
   create_table "difference_reservations", force: :cascade do |t|
     t.integer "element_id"
@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(version: 20180120172136) do
 
   create_table "reservation_differences", force: :cascade do |t|
     t.integer "element_id"
-    t.integer "reservation_block"
-    t.date "reservation_date"
-    t.integer "reservation_amount"
+    t.integer "block"
+    t.date "date"
+    t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

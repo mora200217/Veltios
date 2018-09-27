@@ -78,6 +78,7 @@ def update
     @reserve_items = current_reserve.reserve_items
     @current_user = current_user
     ReportMailer.receipt(@reserve_items, @current_user).deliver
+    update_day_reservations # Update per day
     @reserve_items.delete_all
     redirect_to root_path
   end
@@ -150,4 +151,13 @@ def update
       summary: "TEST Calendar"
     }
   end
+end
+
+
+# Update Day Reservations Values
+def update_day_reservations
+  @reserve_items.each do |item|
+      ReservationDifference.new(element_id: item.element_id, block_id: 1, date:  Time.now.strftime("%d / %b / %Y"), amount: 2)
+  end
+
 end
