@@ -110,7 +110,7 @@ function initDate(){
 alert("adfzxgcn");
 
 }
-function changeValue(){
+function dayChange(){
 // alert("DONE");
 var form = document.getElementById("date-change-form");
 $("#myModal").modal("toggle");
@@ -121,14 +121,45 @@ $("#myModal").modal("toggle");
 
 
 function submitForm(){
-  var form = document.getElementById("date-change-form");
+  var datePicker = document.getElementById("datepicker");
 
   $.ajax({
     type: "delete",
     url: "/reserve_actions/destroy_all"});
 
-  form.submit();
+var date = datePicker.value;
+var tempDate = Date.parse(date);
+var finalDate = new Date(tempDate)
+
+
+
+alert(date);
+var break_ = 0;
+// Radio Button Extraction // TODO: SIMPLIFY THIS C**P!
+if(document.getElementById("1-rdo-1").checked){
+break_ = 1;
+}else if(document.getElementById("2-rdo-2").checked){
+break_ = 2;
+}else if(document.getElementById("3-rdo-3").checked){
+break_ = 3;
 }
+
+
+var newUrl = addOrUpdateUrlParam(window.location.href,"date_picker",finalDate.toString('d/m/y'));
+var finalUrl =addOrUpdateUrlParam(newUrl,"block",break_);
+
+window.location.href = finalUrl;
+
+}
+
+
+function parseDateInput(inputDate){
+var dateString = String(inputDate.split(" "));
+return dateString
+}
+
+
+
 function updateUrlDate(){
   var form = document.getElementById("date-change-form");
 
@@ -166,13 +197,17 @@ $('.new_reserve_item').submit(function(e){
 $('.edit_reserve_item').submit(function(e){
     e.preventDefault();
     alert("we");
-    // $.ajax({
-    //     url:'/elements/create',
-    //     type:'post',
-    //     data:$('#element_form').serialize(),
-    //     success:function(){
-    //       alert("Saved!");
-    //       Console.log("da");
-    //     }
-    // });
 });
+
+
+
+function addOrUpdateUrlParam(uri, paramKey, paramVal) {
+  var re = new RegExp("([?&])" + paramKey + "=[^&#]*", "i");
+  if (re.test(uri)) {
+    uri = uri.replace(re, '$1' + paramKey + "=" + paramVal);
+  } else {
+    var separator = /\?/.test(uri) ? "&" : "?";
+    uri = uri + separator + paramKey + "=" + paramVal;
+  }
+  return uri;
+}

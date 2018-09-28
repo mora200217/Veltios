@@ -156,8 +156,11 @@ end
 
 # Update Day Reservations Values
 def update_day_reservations
+  @existing_differences = ReservationDifference.all
   @reserve_items.each do |item|
-      ReservationDifference.new(element_id: item.element_id, block_id: 1, date:  Time.now.strftime("%d / %b / %Y"), amount: 2)
+    if @existing_differences.find_by(element_id: item.element_id, date: params[:date])
+      ReservationDifference.create(element_id: item.element_id, block: 3, date: Time.now, amount: 2)
   end
+end 
 
 end

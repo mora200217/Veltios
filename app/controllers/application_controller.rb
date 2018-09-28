@@ -4,12 +4,17 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   skip_before_action :verify_authenticity_token
 
+  def default_url_options
+    {date_picker: $current_date, block: $current_block}
+  end
+
   # Current Reservation function
   def current_reserve
     # Public Variables Initial OVerall Declaration
     @@elements = Element.all
     @reserves_done = Array.new
-    $current_date  = Time.now.strftime("%d / %b / %Y")
+    $current_block = 0;
+    $current_date  = Time.now.strftime("%d/%b/%Y")
     # $select_date_status = false
     $default_date= true # 
     $q= Element.ransack(params[:q])
