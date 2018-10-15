@@ -63,7 +63,7 @@ def update
   def action_definer
     @elements = Element.all
     @reserve = current_reserve
-    if @reserve.reserve_items.find_by(element_id: reserve_items_params[:element_id])
+    if @reserve.reserve_items.find_by(element_id: reserve_items_params[:element_id]).exists? # todo: Check If This cr*p works
       update
     else
       create
@@ -161,6 +161,6 @@ def update_day_reservations
     if @existing_differences.find_by(element_id: item.element_id, date: params[:date])
       ReservationDifference.create(element_id: item.element_id, block: 3, date: Time.now, amount: 2)
   end
-end 
+end
 
 end

@@ -11,12 +11,14 @@ class ApplicationController < ActionController::Base
   # Current Reservation function
   def current_reserve
     # Public Variables Initial OVerall Declaration
-    @@elements = Element.all
+    # @@elements = Element.all
     @reserves_done = Array.new
     $current_block = 0;
-    $current_date  = Time.now.strftime("%d/%b/%Y")
+    $current_date  = Time.now.strftime("%d-%b-%Y")
+    $selected_date = params[:date_picker]
     # $select_date_status = false
     $default_date= true # 
+
     $q= Element.ransack(params[:q])
     # require/
 

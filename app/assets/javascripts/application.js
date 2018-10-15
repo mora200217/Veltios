@@ -133,7 +133,7 @@ var finalDate = new Date(tempDate)
 
 
 
-alert(date);
+// alert(date);
 var break_ = 0;
 // Radio Button Extraction // TODO: SIMPLIFY THIS C**P!
 if(document.getElementById("1-rdo-1").checked){
@@ -144,10 +144,23 @@ break_ = 2;
 break_ = 3;
 }
 
+// Convert date input to text
+var datChanged = String(finalDate).split(" ").slice(1,4); // MM/DD/YY
+var dateString = []
+dateString.push(datChanged[1]);
+dateString.push(datChanged[0]);
+dateString.push(datChanged[2]);
 
-var newUrl = addOrUpdateUrlParam(window.location.href,"date_picker",finalDate.toString('d/m/y'));
+console.log("Date:" + dateString.join("/"));
+
+
+
+var newUrl = addOrUpdateUrlParam(window.location.href,"date_picker",dateString.join("-"));
 var finalUrl =addOrUpdateUrlParam(newUrl,"block",break_);
 
+// raise; // Temp Fix
+
+// alert(finalUrl  );
 window.location.href = finalUrl;
 
 }

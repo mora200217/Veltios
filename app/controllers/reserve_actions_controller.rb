@@ -8,7 +8,6 @@ class ReserveActionsController < ApplicationController
    end
     @reserve_items.destroy_all
 
-
   end
 
 end
